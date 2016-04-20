@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <header>
+        <h1 class="heading-large">
+          <span class="heading-secondary">Call OC04R15P0002</span>
+          Application overview
+        </h1>
+    </header>
+    <div class="main-content">
+      <div class="application-status-list">
+        <ol>
+          <li>
+            <span class="name">About your organisation</span>
+            <span class="status-complete">complete</span>
+            <a href="/applicant">edit</a>
+          </li>
+          <li>
+            <span class="name">Project Partners</span>
+            <span class="status-complete">complete</span>
+            <a href="/project_partners">edit</a>
+          </li>
+          <li>
+            <span class="name">About your project</span>
+            <span class="status-complete">complete</span>
+            <a href="/project">edit</a>
+          </li>
+          <li>
+            <span class="name">Strategy</span>
+            <span class="status-complete">complete</span>
+            <a href="/strategy">edit</a>
+          </li>
+          <li>
+            <span class="name">Financial</span>
+            <span class="status-complete">complete</span>
+            <a href="/financial">edit</a>
+          </li>
+          <li>
+            <span class="name">Deliverables</span>
+            <span class="status-error">error</span>
+            <a href="#">edit</a>
+          </li>
+          <li>
+            <span class="name">Project management and control</span>
+            <span class="status-review">review</span>
+            <a href="#">edit</a>
+          </li>
+          <li>
+            <span class="name">Compliance</span>
+            <span class="status-not-started">not started</span>
+            <a href="#">edit</a>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="secondary-content">
+      <div class="application-info">
+        <ul>
+          <li>
+            <span class="title">Call reference</span>
+            <span class="contents">OC04R15P0002</span>
+          </li>
+
+          <li>
+            <span class="title">Application Type</span>
+            <span class="contents">Full</span>
+          </li>
+
+          <li>
+            <span class="title">Created</span>
+            <span class="contents">07 November 2015</span>
+          </li>
+
+          <li>
+            <span class="title">Progress</span>
+            <span class="contents">5 of 8 sections completed</span>
+          </li>
+
+          <li>
+            <span class="title">Status</span>
+            <span class="contents">Incomplete</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Your dashboard</h3>
+        <ul>
+          <li>
+            <a href="/dashboard">My tasks</a>
+          </li>
+          <li>
+            <a href="/dashboard">Existing applications</a>
+          </li>
+          <li>
+            <a href="/dashboard">Projects</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+{% endblock %}

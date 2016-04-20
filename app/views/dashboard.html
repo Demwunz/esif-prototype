@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <header>
+        <h1 class="heading-large">Welcome firstName LastName</h1>
+    </header>
+    <div class="main-content">
+        <h2 class="heading-medium">New applications</h2>
+        <p>To start a new application you will be asked to select the call to which your organisation wishes to apply. You can create, edit and save the draft application as many times as you need before submitting it for assessment.</p>
+        <p><a href="#">View the call list</a></p>
+    </div>
+    <table>
+      <caption>Your current applications</caption>
+      <thead>
+        <tr>
+          <th scope="col">Project Name</th>
+          <th scope="col">Call Reference</th>
+          <th scope="col" class="numeric">Last Edited</th>
+          <th scope="col">Status</th>
+          <th scope="col">Type</th>
+          <th scope="col">resumeLink</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Test Mp ERDF(F) 150930</td>
+          <td>OC04RP0002</td>
+          <td class="numeric">07/11/2015 10:15</td>
+          <td>In Progress</td>
+          <td>Full</td>
+          <td><a href="full-application.html">resume</a></td>
+        </tr>
+        <tr>
+          <td>Test 2</td>
+          <td>OC04RP0002</td>
+          <td class="numeric">07/11/2015 10:15</td>
+          <td>In Progress</td>
+          <td>Full</td>
+          <td><a href="full-application.html">resume</a></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="6">
+              <span class="strong">Showing 1 to 4 of 4 entries</span>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </main>
+{% endblock %}
