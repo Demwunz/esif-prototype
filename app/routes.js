@@ -21,31 +21,31 @@ router.get('/full-application', function (req, res) {
 
 router.get('/applicant/:page', function (req, res) {
 
-  res.render('/applicant/' + req.params.page + '.html');
+  res.render('/applicant/' + req.params.page);
 
 });
 
 router.get('/financial/:page', function (req, res) {
 
-  res.render('/financial/' + req.params.page + '.html');
+  res.render('/financial/' + req.params.page);
 
 });
 
 router.get('/project/:page', function (req, res) {
 
-  res.render('/project/' + req.params.page + '.html');
+  res.render('/project/' + req.params.page);
 
 });
 
 router.get('/project-partners/:page', function (req, res) {
 
-  res.render('/project_partners/' + req.params.page + '.html');
+  res.render('/project_partners/' + req.params.page);
 
 });
 
 router.get('/strategy/:page', function (req, res) {
 
-  res.render('/strategy/' + req.params.page + '.html');
+  res.render('/strategy/' + req.params.page);
 
 });
 
