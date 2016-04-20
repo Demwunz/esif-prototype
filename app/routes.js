@@ -2,43 +2,51 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function (req, res) {
-  
+
   res.render('index');
 
 });
 
+router.get('/dashboard', function (req, res) {
 
-// Example routes - feel free to delete these
-
-// Passing data into a page
-
-router.get('/examples/template-data', function (req, res) {
-
-  res.render('examples/template-data', { 'name' : 'Foo' });
+  res.render('dashboard');
 
 });
 
-// Branching
+router.get('/full-application', function (req, res) {
 
-router.get('/examples/over-18', function (req, res) {
-
-  // get the answer from the query string (eg. ?over18=false)
-  var over18 = req.query.over18;
-
-  if (over18 == "false"){
-
-    // redirect to the relevant page
-    res.redirect("/examples/under-18");
-
-  } else {
-
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('examples/over-18');
-
-  }
+  res.render('full-application');
 
 });
 
-// add your routes here
+router.get('/applicant/:page', function (req, res) {
+
+  res.render('/applicant/' + req.params.page + '.html');
+
+});
+
+router.get('/financial/:page', function (req, res) {
+
+  res.render('/financial/' + req.params.page + '.html');
+
+});
+
+router.get('/project/:page', function (req, res) {
+
+  res.render('/project/' + req.params.page + '.html');
+
+});
+
+router.get('/project-partners/:page', function (req, res) {
+
+  res.render('/project_partners/' + req.params.page + '.html');
+
+});
+
+router.get('/strategy/:page', function (req, res) {
+
+  res.render('/strategy/' + req.params.page + '.html');
+
+});
 
 module.exports = router;
