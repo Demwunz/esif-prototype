@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Step 2</span>
+          Delivery partners
+        </h1>
+    </div>
+    <div class="main-content">
+      <form action="/project">
+        <!-- sme? -->
+        <div class="form-group">
+          <h2 class="form-label-bold">Will the project have delivery partners?</h2>
+          <fieldset class="inline">
+            <legend class="visuallyhidden">Will the project have delivery partners?</legend>
+
+            <label for="partners-yes" class="block-label">
+              <input type="radio" name="partners" value="Yes" id="partners-yes">
+              Yes
+            </label>
+
+            <label for="partners-no" class="block-label">
+              <input type="radio" name="partners" value="No" id="partners-no">
+              No
+            </label>
+          </fieldset>
+        </div>
+          <!-- submit -->
+          <div class="form-group inline">
+            <button class="button" type="submit">Save and continue</button>
+            <button class="button-hyperlink">Save and quit</button>
+          </div>
+      </form>
+    </div>
+    <div class="secondary-content">
+      <div class="application-info">
+        <ul>
+          <li>
+            <span class="title">Call reference</span>
+            <span class="contents">OC04R15P0002</span>
+          </li>
+
+          <li>
+            <span class="title">Application Type</span>
+            <span class="contents">Full</span>
+          </li>
+
+          <li>
+            <span class="title">Created</span>
+            <span class="contents">07 November 2015</span>
+          </li>
+
+          <li>
+            <span class="title">Progress</span>
+            <span class="contents">5 of 8 sections completed</span>
+          </li>
+
+          <li>
+            <span class="title">Status</span>
+            <span class="contents">Incomplete</span>
+          </li>
+        </ul>
+      </div>
+      <nav class="secondary-nav">
+        <h3>Your dashboard</h3>
+        <ul>
+          <li>
+            <a href="/dashboard">My tasks</a>
+          </li>
+          <li>
+            <a href="/dashboard">Existing applications</a>
+          </li>
+          <li>
+            <a href="/dashboard">Projects</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+{% endblock %}

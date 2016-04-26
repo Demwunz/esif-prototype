@@ -1,25 +1,7 @@
-@import "typography";
-
 .shout {
   font-weight:700;
   text-transform: uppercase;
 }
 .strong {
   font-weight:700;
-}
-.button-hyperlink {
-  @include core-19;
-  text-transform: none;
-  background: none;
-  outline: none;
-  border: none;
-  color: $link-colour;
-  text-decoration: underline;
-  text-align: left;
-  padding: $gutter-half/2;
-  margin-left:$gutter;
-  cursor:pointer;
-  &:hover {
-    color:$link-hover-colour;
-  }
 }
