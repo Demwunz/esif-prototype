@@ -1,0 +1,70 @@
+.application-status-list {
+  ol {
+    display:table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  li {
+    counter-increment: step-counter;
+    display:table-row;
+    width: 100%;
+    padding:em(10) 0;
+    font-weight: 700;
+    border-bottom:em(1) solid $border-colour;
+    &:before {
+      content: counter(step-counter) '.';
+      font-weight: bold;
+    }
+    &:first-child{
+      border-top:em(1) solid $border-colour
+    }
+    .name {
+      display: table-cell;
+      padding:$gutter-half/2 0;
+    }
+    a {
+      display: table-cell;
+      padding-right: $gutter-half;
+      text-align: center;
+    }
+    &:hover {
+      background: $highlight-colour;
+    }
+  }
+  .status-pill {
+    font-size:12px;
+    border-style: solid;
+    border-width: em(2);
+    padding:em(5);
+    border-radius: em(3);
+    text-transform: uppercase;
+    display: inline-block;
+    &.complete{
+      color: $green;
+      border-color:$green;
+    }
+    &.error{
+      color:$error-colour;
+      border-color:$error-colour;
+    }
+    &.review{
+      color:$orange;
+      border-color:$orange;
+    }
+    &.not-started {
+      color:$grey-1;
+      border-color:$grey-1;
+    }
+  }
+}
+.application-info {
+  border-top: em(10) solid $govuk-blue;
+  padding-top:em(5);
+  li{
+    padding:$gutter-half/2 0;
+  }
+  .title {
+    @include bold-19();
+    display: block;
+  }
+}

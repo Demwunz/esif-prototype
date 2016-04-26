@@ -1,7 +1,10 @@
+@import "grid_layout";
+
 .main-content {
+  @include grid-column(2/3);
   padding-left:0;
 }
 
 .secondary-content {
-  // @include grid-column(1/3);
+  @include grid-column(1/3);
 }

@@ -1,0 +1,14 @@
+.secondary-nav {
+  border-top:em(1) solid $border-colour;
+  padding-top:$gutter-half;
+  margin-top:$gutter-half;
+  h3 {
+    @include bold-19();
+  }
+  ul {
+    list-style: none;
+  }
+  li {
+    padding:em(5) 0;
+  }
+}
