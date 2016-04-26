@@ -3,6 +3,13 @@
 .main-content {
   @include grid-column(2/3);
   padding-left:0;
+  .form-group {
+    @include grid-column(3/4);
+    padding-left:0;
+    .form-control {
+      width:100%;
+    }
+  }
 }
 
 .secondary-content {

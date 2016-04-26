@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Step 1</span>
+          About yout organisation
+        </h1>
+    </div>
+    <div class="main-content">
+      <form action="/">
+        <legend class="visually-hidden">About your organisation</legend>
+        <fieldset>
+          <!-- organisation name -->
+          <div class="form-group">
+            <label class="form-label-bold" for="organisation-name">Organisation name</label>
+            <input type="text" class="form-control" id="organisation-name">
+          </div>
+          <!-- organisation type -->
+          <div class="form-group">
+            <label class="form-label-bold" for="organisation-type">Organisation type</label>
+            <input type="text" class="form-control" id="organisation-type">
+          </div>
+          <!-- sme? -->
+          <div class="form-group">
+            <h2 class="form-label-bold">Is this a small or medium-sized enterprise (SME)?</h2>
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Is this a small or medium-sized enterprise (SME)?</legend>
+
+              <label for="sme-yes" class="block-label">
+                <input type="radio" name="sme" value="Yes" id="sme-yes">
+                Yes
+              </label>
+
+              <label for="sme-no" class="block-label">
+                <input type="radio" name="sme" value="No" id="sme-no">
+                No
+              </label>
+            </fieldset>
+          </div>
+          <!-- company or charity number-->
+          <div class="form-group">
+            <label class="form-label-bold" for="company-charity-number">Company or charity registration number</label>
+            <input type="text" class="form-control" id="company-charity-number">
+          </div>
+          <!-- vat number -->
+          <div class="form-group">
+            <label class="form-label-bold" for="vat-number">
+              VAT number
+              <span class="form-hint">if applicable</span>
+            </label>
+            <input type="text" class="form-control" id="vat-number">
+          </div>
+          <!-- sme? -->
+          <div class="form-group">
+            <h2 class="form-label-bold">Has this organisation previously worked on a project funded through ESF, ERDF or EAFRD?</h2>
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Has this organisation previously worked on a project funded through ESF, ERDF or EAFRD?</legend>
+
+              <label for="previous-project-yes" class="block-label">
+                <input type="radio" name="previous-project" value="Yes" id="previous-project-yes">
+                Yes
+              </label>
+
+              <label for="previous-project-no" class="block-label">
+                <input type="radio" name="previous-project" value="No" id="previous-project-no">
+                No
+              </label>
+            </fieldset>
+          </div>
+          <div class="form-group inline">
+            <button class="button" type="submit">Save and continue</button>
+            <button class="button-hyperlink">Save and quit</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="secondary-content">
+      <div class="application-info">
+        <ul>
+          <li>
+            <span class="title">Call reference</span>
+            <span class="contents">OC04R15P0002</span>
+          </li>
+
+          <li>
+            <span class="title">Application Type</span>
+            <span class="contents">Full</span>
+          </li>
+
+          <li>
+            <span class="title">Created</span>
+            <span class="contents">07 November 2015</span>
+          </li>
+
+          <li>
+            <span class="title">Progress</span>
+            <span class="contents">5 of 8 sections completed</span>
+          </li>
+
+          <li>
+            <span class="title">Status</span>
+            <span class="contents">Incomplete</span>
+          </li>
+        </ul>
+      </div>
+      <nav class="secondary-nav">
+        <h3>Your dashboard</h3>
+        <ul>
+          <li>
+            <a href="/dashboard">My tasks</a>
+          </li>
+          <li>
+            <a href="/dashboard">Existing applications</a>
+          </li>
+          <li>
+            <a href="/dashboard">Projects</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+{% endblock %}
