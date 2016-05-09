@@ -21,9 +21,9 @@ router.get('/full-application', function (req, res) {
 //   res.render('/financial/' + req.params.page);
 // });
 
-// router.get('/project/:page', function (req, res) {
-//   res.render('/project/' + req.params.page);
-// });
+router.post('/project/:page', function (req, res) {
+  res.render('/project/' + req.params.page);
+});
 
 // router.get('/project-partners/:page', function (req, res) {
 //   res.render('/project_partners/' + req.params.page);

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Step 3</span>
+          About your project
+        </h1>
+    </div>
+    <div class="main-content">
+      <form action="/project/key-dates/" method="post">
+      </form>
+      <nav class="secondary-nav">
+        <h3>Your dashboard</h3>
+        <ul>
+          <li>
+            <a href="/dashboard">My tasks</a>
+          </li>
+          <li>
+            <a href="/dashboard">Existing applications</a>
+          </li>
+          <li>
+            <a href="/dashboard">Projects</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+{% endblock %}
