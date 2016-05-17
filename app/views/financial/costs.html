@@ -1,0 +1,147 @@
+{% extends "layout.html" %} {% block page_title %} Apply for European Structural and Investment Funding {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="/dashboard">About your project</a></li>
+      <li>Financial information</li>
+    </ol>
+  </div>
+  <div class="main-header">
+    <h1 class="heading-xlarge">
+      <span class="heading-secondary">Step 4</span>
+      <span class="visually-hidden">:</span>
+      Financial information - Costs
+    </h1>
+  </div>
+  <div class="main-content">
+    <form action="/project/key-dates">
+      <fieldset>
+        <legend>Add your project costs</legend>
+        <div class="form-group">
+          <label for="cost-category" class="form-label">Cost category</label>
+          <select name="cost-category" id="cost-category" class="form-control">
+            <option value="Building acquisition- Capital">Capital - Building acquisition</option>
+            <option value="Building and construction- Capital">Capital - Building and construction</option>
+            <option value="Equipment- Capital">Capital - Equipment</option>
+            <option value="Fees- Capital">Capital - Fees</option>
+            <option value="Land acquisition- Capital">Capital - Land acquisition</option>
+            <option value="Other capital- Capital">Capital - Other capital</option>
+            <option value="Plant and machinery- Capital">Capital - Plant and machinery</option>
+            <option value="Premises- Capital">Capital - Premises</option>
+            <option value="Consultancy - Revenue">Revenue - Consultancy</option>
+            <option value="Flat rate indirect costs - Revenue">Revenue - Flat rate indirect costs</option>
+            <option value="Marketing - Revenue">Revenue - Marketing</option>
+            <option value="Office costs - Revenue">Revenue - Office costs</option>
+            <option value="Overheads - Revenue">Revenue - Overheads</option>
+            <option value="Professional fees - Revenue">Revenue - Professional fees</option>
+            <option value="Rent - Revenue">Revenue - Rent</option>
+            <option value="Salaries - Revenue">Revenue - Salaries</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="costs-value" class="form-label">Value</label>
+          <input type="text" class="form-control" id="costs-value">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Funding source</legend>
+        <div class="form-group">
+          <label for="funding-source" class="form-label">Cost category</label>
+          <select name="funding-source" id="cost-category" class="form-control">
+            <option value="Building acquisition- Capital">Capital - Building acquisition</option>
+            <option value="Building and construction- Capital">Capital - Building and construction</option>
+            <option value="Equipment- Capital">Capital - Equipment</option>
+            <option value="Fees- Capital">Capital - Fees</option>
+            <option value="Land acquisition- Capital">Capital - Land acquisition</option>
+            <option value="Other capital- Capital">Capital - Other capital</option>
+            <option value="Plant and machinery- Capital">Capital - Plant and machinery</option>
+            <option value="Premises- Capital">Capital - Premises</option>
+            <option value="Consultancy - Revenue">Revenue - Consultancy</option>
+            <option value="Flat rate indirect costs - Revenue">Revenue - Flat rate indirect costs</option>
+            <option value="Marketing - Revenue">Revenue - Marketing</option>
+            <option value="Office costs - Revenue">Revenue - Office costs</option>
+            <option value="Overheads - Revenue">Revenue - Overheads</option>
+            <option value="Professional fees - Revenue">Revenue - Professional fees</option>
+            <option value="Rent - Revenue">Revenue - Rent</option>
+            <option value="Salaries - Revenue">Revenue - Salaries</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="funding-source-name" class="form-label">Name of funding source</label>
+          <input type="text" class="form-control" id="funding-source-name">
+        </div>
+        <div class="form-group">
+          <h2 class="form-label-bold">Type of funding</h2>
+          <fieldset class="inline">
+            <legend class="visuallyhidden">Type of funding</legend>
+
+            <label for="captial-yes" class="block-label">
+              <input type="radio" name="captial" value="Yes" id="captial-yes">
+              Capital
+            </label>
+
+            <label for="revenue-no" class="block-label">
+              <input type="radio" name="revenue" value="No" id="revenue-no">
+              Revenue
+            </label>
+          </fieldset>
+        </div>
+      </fieldset>
+
+      <!-- submit -->
+      <div class="form-group inline">
+        <button class="button" type="submit">Save and continue</button>
+        <button class="button-hyperlink">Save and quit</button>
+      </div>
+    </form>
+  </div>
+  <div class="secondary-content">
+    <div class="application-info">
+      <ul>
+        <li>
+          <span class="title">Call reference</span>
+          <span class="contents">OC04R15P0002</span>
+        </li>
+
+        <li>
+          <span class="title">Application Type</span>
+          <span class="contents">Full</span>
+        </li>
+
+        <li>
+          <span class="title">Created</span>
+          <span class="contents">07 November 2015</span>
+        </li>
+
+        <li>
+          <span class="title">Progress</span>
+          <span class="contents">5 of 8 sections completed</span>
+        </li>
+
+        <li>
+          <span class="title">Status</span>
+          <span class="contents">Incomplete</span>
+        </li>
+      </ul>
+    </div>
+    <nav class="secondary-nav">
+      <h3>Your dashboard</h3>
+      <ul>
+        <li>
+          <a href="/dashboard">My tasks</a>
+        </li>
+        <li>
+          <a href="/dashboard">Existing applications</a>
+        </li>
+        <li>
+          <a href="/dashboard">Projects</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</main>
+
+{% endblock %}

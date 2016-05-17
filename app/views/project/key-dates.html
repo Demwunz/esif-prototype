@@ -4,15 +4,168 @@
 
   <main id="content" role="main">
     {% include "includes/phase_banner_alpha.html" %}
+    <div class="breadcrumbs">
+      <ol>
+        <li><a href="/dashboard">About your project</a></li>
+        <li>Key dates</li>
+      </ol>
+    </div>
     <div class="main-header">
-        <h1 class="heading-large">
+        <h1 class="heading-xlarge">
           <span class="heading-secondary">Step 3</span>
-          About your project
+          <span class="visually-hidden">:</span>
+          Key dates
         </h1>
     </div>
     <div class="main-content">
-      <form action="/project/key-dates/" method="post">
+      <form action="/strategy">
+        <!-- project start date -->
+        <fieldset class="form-group">
+          <legend>Project start date</legend>
+          <div class="form-date">
+
+            <p class="form-hint">For example, 31 3 2016</p>
+
+            <div class="form-group form-group-day">
+              <label for="start-date-day">Day</label>
+              <input class="form-control" id="start-date-day" name="start-date-day" type="number" pattern="[0-9]*" min="0" max="31">
+            </div>
+
+            <div class="form-group form-group-month">
+              <label for="start-date-month">Month</label>
+              <input class="form-control" id="start-date-month" name="start-date-month" type="number" pattern="[0-9]*" min="0" max="12">
+            </div>
+
+            <div class="form-group form-group-year">
+              <label for="start-date-year">Year</label>
+              <input class="form-control" id="start-date-year" name="start-date-year" type="number" pattern="[0-9]*" min="0" max="2014">
+            </div>
+
+          </div>
+        </fieldset>
+
+        <!-- financial completion date -->
+        <fieldset class="form-group">
+          <legend>Financial completion date</legend>
+          <div class="form-date">
+
+            <p class="form-hint">For example, 31 4 2016</p>
+
+            <div class="form-group form-group-day">
+              <label for="completion-date-day">Day</label>
+              <input class="form-control" id="completion-date-day" name="completion-date-day" type="number" pattern="[0-9]*" min="0" max="31">
+            </div>
+
+            <div class="form-group form-group-month">
+              <label for="completion-date-month">Month</label>
+              <input class="form-control" id="completion-date-month" name="completion-date-month" type="number" pattern="[0-9]*" min="0" max="12">
+            </div>
+
+            <div class="form-group form-group-year">
+              <label for="completion-date-year">Year</label>
+              <input class="form-control" id="completion-date-year" name="completion-date-year" type="number" pattern="[0-9]*" min="0" max="2014">
+            </div>
+
+          </div>
+        </fieldset>
+
+        <!-- financial completion date -->
+        <fieldset class="form-group">
+          <legend>Project end date</legend>
+          <div class="form-date">
+
+            <p class="form-hint">For example, 31 5 2016</p>
+
+            <div class="form-group form-group-day">
+              <label for="end-date-day">Day</label>
+              <input class="form-control" id="end-date-day" name="end-date-day" type="number" pattern="[0-9]*" min="0" max="31">
+            </div>
+
+            <div class="form-group form-group-month">
+              <label for="end-date-month">Month</label>
+              <input class="form-control" id="end-date-month" name="end-date-month" type="number" pattern="[0-9]*" min="0" max="12">
+            </div>
+
+            <div class="form-group form-group-year">
+              <label for="end-date-year">Year</label>
+              <input class="form-control" id="end-date-year" name="end-date-year" type="number" pattern="[0-9]*" min="0" max="2014">
+            </div>
+
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend class="heading-medium">
+            List any project milestones and dates that they will be met
+          </legend>
+          <div class="repeat">
+            <div class="form-group">
+              <label class="form-label" for="milestone-description">Milestone Description</label>
+              <input type="text" class="form-control" id="milestone-description">
+            </div>
+            <!-- financial completion date -->
+            <fieldset class="form-group">
+              <legend class="heading-small">Milestone date</legend>
+              <div class="form-date">
+
+                <p class="form-hint">For example, 31 5 2016</p>
+
+                <div class="form-group form-group-day">
+                  <label for="milestone-date-day">Day</label>
+                  <input class="form-control" id="milestone-date-day" name="milestone-date-day" type="number" pattern="[0-9]*" min="0" max="31">
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label for="milestone-date-month">Month</label>
+                  <input class="form-control" id="milestone-date-month" name="milestone-date-month" type="number" pattern="[0-9]*" min="0" max="12">
+                </div>
+
+                <div class="form-group form-group-year">
+                  <label for="milestone-date-year">Year</label>
+                  <input class="form-control" id="milestone-date-year" name="milestone-date-year" type="number" pattern="[0-9]*" min="0" max="2014">
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+        </fieldset>
+
+          <!-- submit -->
+          <div class="form-group inline">
+            <button class="button" type="submit">Save and continue</button>
+            <button class="button-hyperlink">Save and quit</button>
+          </div>
       </form>
+    </div>
+    <div class="secondary-content">
+      <div class="application-info">
+        <ul>
+          <li>
+            <span class="title">Call reference</span>
+            <span class="contents">OC04R15P0002</span>
+          </li>
+
+          <li>
+            <span class="title">Application Type</span>
+            <span class="contents">Full</span>
+          </li>
+
+          <li>
+            <span class="title">Created</span>
+            <span class="contents">07 November 2015</span>
+          </li>
+
+          <li>
+            <span class="title">Progress</span>
+            <span class="contents">5 of 8 sections completed</span>
+          </li>
+
+          <li>
+            <span class="title">Status</span>
+            <span class="contents">Incomplete</span>
+          </li>
+        </ul>
+      </div>
       <nav class="secondary-nav">
         <h3>Your dashboard</h3>
         <ul>

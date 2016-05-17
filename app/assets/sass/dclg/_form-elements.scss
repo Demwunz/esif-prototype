@@ -16,7 +16,6 @@
 }
 legend {
   @include bold-24();
-  margin-bottom:$gutter-half;
   display:inline-block;
 }
 fieldset{
@@ -27,8 +26,21 @@ fieldset{
 }
 .main-content .form-group {
   .form-control{
+    &[type='text'] {
+      width:75%;
+    }
     &.small {
       width:40%;
+    }
+  }
+  textarea.form-control{
+    width:95%;
+  }
+}
+.repeat {
+  .form-group {
+    legend.heading-small {
+      margin-top:0;
     }
   }
 }
