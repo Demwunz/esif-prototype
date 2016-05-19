@@ -8,3 +8,6 @@
 .secondary-content {
   @include grid-column(1/3);
 }
+.submit-buttons {
+  margin-top:$gutter;
+}

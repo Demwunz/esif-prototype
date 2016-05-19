@@ -17,7 +17,7 @@
   </div>
   <div class="main-content">
     <form action="/project/key-dates">
-      <div class="total-table">
+      <div class="table">
         <table>
           <caption class="heading-medium">Project costs</caption>
           <colgroup>
@@ -27,27 +27,175 @@
           <thead>
             <tr>
               <th scope="col">Cost category</th>
-              <th scope="col">Total</th>
+              <th scope="col" class="numeric">Total</th>
             </tr>
           </thead>
           <tbody>
-              <tr>
-                 <th scope="row" class="td">Capital</th>
-                 <td><span class="val">0</span></td>
-              </tr>
-              <tr>
-                 <th scope="row" class="td">Revenue</th>
-                 <td><span class="val">0</span></td>
-              </tr>
-              <tr>
-                 <th scope="row">Total</th>
-                 <td><span class="val">0</span></td>
-              </tr>
+            <tr>
+              <th scope="row">Capital</th>
+              <td class="numeric"><span class="val">0</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Revenue</th>
+              <td class="numeric"><span class="val">0</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Total</th>
+              <td class="numeric"><span class="val">0</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table">
+        <table>
+          <caption class="heading-medium">Funding sources</caption>
+          <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">Funding type</th>
+              <th scope="col">Funding source</th>
+              <th scope="col">Source</th>
+              <th scope="col">Type of expenditure</th>
+            </tr>
+          </thead>
+          <!-- table values here -->
+        </table>
+      </div>
+      <h2 class="heading-large">Cost and funding allocations</h2>
+      <div class="table">
+        <table>
+          <caption class="heading-medium">Priority axis</caption>
+          <colgroup>
+            <col>
+          </colgroup>
+          <!-- table values here -->
+        </table>
+      </div>
+      <div class="table">
+        <table>
+          <caption class="heading-medium">Funding by category of region</caption>
+          <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">Funding source</th>
+              <th scope="col" class="numeric">More developed</th>
+              <th scope="col" class="numeric">Transitional</th>
+              <th scope="col" class="numeric">Less developed</th>
+              <th scope="col" class="numeric">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">ERDF (capital)</th>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+            </tr>
+            <tr>
+              <th scope="row">ERDF (revenue)</th>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Subtotal capital</th>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Subtotal revenue</th>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Total</th>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table">
+        <table>
+          <caption class="heading-medium">Funding by Local Enterprise Partnership</caption>
+          <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">Local Enterprise Partnership</th>
+              <th scope="col" class="numeric">ERDF</th>
+              <th scope="col" class="numeric">Public match funding</th>
+              <th scope="col" class="numeric">Private match funding</th>
+              <th scope="col" class="numeric">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Total</th>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table">
+        <table>
+          <caption class="heading-medium">Funding by Local Enterprise priority</caption>
+          <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">Investment priority</th>
+              <th scope="col" class="numeric">ERDF</th>
+              <th scope="col" class="numeric">Public match funding</th>
+              <th scope="col" class="numeric">Private match funding</th>
+              <th scope="col" class="numeric">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Total</th>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+              <td class="numeric"><span class="val">0</span></td>
+            </tr>
           </tbody>
         </table>
       </div>
       <!-- submit -->
-      <div class="form-group inline">
+      <div class="form-group inline submit-buttons">
         <button class="button" type="submit">Save and continue</button>
         <button class="button-hyperlink">Save and quit</button>
       </div>
