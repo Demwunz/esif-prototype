@@ -9,7 +9,7 @@ function validate(e) {
 
   // Check all data-required tags
   $('[data-required]').each(function () {
-    var textInputs = $(this).find('input[type="text"]');
+    var textInputs = $(this).find('input[type="text"], input[type="password"]');
     var radioInputs = $(this).find('input[type="radio"]');
     var checkboxInputs = $(this).find('input[type="checkbox"]');
     var textAreas = $(this).find('textarea');
@@ -52,7 +52,7 @@ function validate(e) {
 
           $('.error-summary-list:first').append(
             String(
-              '<li><a href="#' + id + '">- ' + text + ' - ' + errorMessage.toLowerCase() + '</a></li>'
+              '<li><a href="#' + id + '">' + text + errorMessage.toLowerCase() + '</a></li>'
             )
           );
         }

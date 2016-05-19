@@ -8,6 +8,7 @@
 
 <main id="content" role="main">
   {% include "includes/phase_banner_alpha.html" %}
+  {% include 'includes/page_errors.html' %}
   <header>
     <h1 class="heading-xlarge">Apply for European Structural and Investment Funding</h1>
   </header>
@@ -17,27 +18,34 @@
         <p>Register for an <a href="#" rel="external"><span class="shout">e-claims</span> account</a> to manage your <abbr title="European Structural Investment Fund">ESIF</abbr> projects.</p>
       </div>
       <form action="/dashboard" method="get" class="form">
-        <legend class="heading-medium"><span class="shout">e-claims</span> Login</legend>
+        <fieldset>
+          <legend class="heading-medium"><span class="shout">e-claims</span> Login</legend>
 
-        <!-- user ID -->
-        <div class="form-group">
-          <label class="form-label" for="user-id">
-            User ID
-            <span class="form-hint">Given to you when you registered</span>
-          </label>
-          <input type="text" class="form-control" id="user-id">
-        </div>
 
-        <!-- password -->
-        <div class="form-group">
-          <label class="form-label" for="user-password">Password</label>
-          <input type="text" class="form-control" id="user-password">
-        </div>
+          <!-- user ID -->
+          <div class="form-group">
+            <fieldset data-required data-error="Cannot be blank">
+              <label class="form-label" for="user-id">
+                User ID
+                <span class="form-hint">Given to you when you registered</span>
+              </label>
+              <input type="text" class="form-control" id="user-id">
+            </fieldset>
+          </div>
 
-        <!-- Login button -->
-        <div class="form-group">
-          <input type="submit" class="button" value="Login">
-        </div>
+          <!-- password -->
+          <div class="form-group">
+            <fieldset data-required data-error="Cannot be blank">
+              <label class="form-label" for="user-password">Password</label>
+              <input type="password" class="form-control" id="user-password">
+            </fieldset>
+          </div>
+
+          <!-- Login button -->
+          <div class="form-group">
+            <input type="submit" class="button" value="Login">
+          </div>
+        </fieldset>
       </form>
     </div>
   </div>
