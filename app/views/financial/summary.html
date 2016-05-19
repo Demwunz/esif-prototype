@@ -1,0 +1,102 @@
+{% extends "layout.html" %} {% block page_title %} Apply for European Structural and Investment Funding {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="/dashboard">About your project</a></li>
+      <li>Financial information - summary</li>
+    </ol>
+  </div>
+  <div class="main-header">
+    <h1 class="heading-xlarge">
+      <span class="heading-secondary">Step 4</span>
+      <span class="visually-hidden">:</span>
+      Financial information - summary
+    </h1>
+  </div>
+  <div class="main-content">
+    <form action="/project/key-dates">
+      <div class="total-table">
+        <table>
+          <caption class="heading-medium">Project costs</caption>
+          <colgroup>
+            <col>
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">Cost category</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                 <th scope="row" class="td">Capital</th>
+                 <td><span class="val">0</span></td>
+              </tr>
+              <tr>
+                 <th scope="row" class="td">Revenue</th>
+                 <td><span class="val">0</span></td>
+              </tr>
+              <tr>
+                 <th scope="row">Total</th>
+                 <td><span class="val">0</span></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- submit -->
+      <div class="form-group inline">
+        <button class="button" type="submit">Save and continue</button>
+        <button class="button-hyperlink">Save and quit</button>
+      </div>
+    </form>
+  </div>
+  <div class="secondary-content">
+    <div class="application-info">
+      <ul>
+        <li>
+          <span class="title">Call reference</span>
+          <span class="contents">OC04R15P0002</span>
+        </li>
+
+        <li>
+          <span class="title">Application Type</span>
+          <span class="contents">Full</span>
+        </li>
+
+        <li>
+          <span class="title">Created</span>
+          <span class="contents">07 November 2015</span>
+        </li>
+
+        <li>
+          <span class="title">Progress</span>
+          <span class="contents">5 of 8 sections completed</span>
+        </li>
+
+        <li>
+          <span class="title">Status</span>
+          <span class="contents">Incomplete</span>
+        </li>
+      </ul>
+    </div>
+    <nav class="secondary-nav">
+      <h3>Your dashboard</h3>
+      <ul>
+        <li>
+          <a href="/dashboard">My tasks</a>
+        </li>
+        <li>
+          <a href="/dashboard">Existing applications</a>
+        </li>
+        <li>
+          <a href="/dashboard">Projects</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</main>
+
+{% endblock %}

@@ -16,7 +16,7 @@
     </h1>
   </div>
   <div class="main-content">
-    <form action="/project/key-dates">
+    <form action="/financial/summary">
       <fieldset>
         <legend>Add your project costs</legend>
         <div class="form-group">
@@ -91,6 +91,76 @@
         </div>
       </fieldset>
 
+      <fieldset>
+        <legend>Where funding will be allocated</legend>
+        <div class="form-group">
+          <h3 class="form-label">Priority axis</h3>
+          <label for="priority-axis" class="block-label">
+            <input type="checkbox" name="priority-axis" value="PAR" id="priority-axis">
+            PAR
+          </label>
+        </div>
+        <div class="form-group">
+          <h3 class="form-label">Investment priority</h3>
+          <label for="investment-priority" class="block-label">
+            <input type="checkbox" name="investment-priority" value="IP1" id="investment-priority">
+            IP1 - IP1
+          </label>
+        </div>
+        <div class="form-group">
+          <h3 class="form-label">LEP area</h3>
+          <label for="lep-area" class="block-label">
+            <input type="checkbox" name="lep-area" value="06 - Coventry and Warwickshire" id="lep-area">
+            06 - Coventry and Warwickshire
+          </label>
+        </div>
+        <div class="form-group">
+          <h2 class="form-label-bold">Region category</h2>
+          <fieldset class="inline">
+            <legend class="visuallyhidden">Region category</legend>
+
+            <label for="region-more" class="block-label">
+              <input type="radio" name="region" value="More Developed" id="region-more">
+              More developed
+            </label>
+
+            <label for="region-transitional" class="block-label">
+              <input type="radio" name="region" value="Transitional" id="region-transitional">
+              Transitional
+            </label>
+            <label for="region-less" class="block-label">
+              <input type="radio" name="region" value="Less Developed" id="region-less">
+              Less developed
+            </label>
+          </fieldset>
+        </div>
+      </fieldset>
+      <div class="total-table">
+        <table>
+          <caption class="heading-medium">Total</caption>
+          <colgroup>
+            <col>
+            <col>
+          </colgroup>
+          <tbody>
+              <tr>
+                 <th scope="row">Capital</th>
+                 <td>£<span class="val">0.00</span></td>
+              </tr>
+              <tr>
+                 <th scope="row">Revenue</th>
+                 <td>£<span class="val">0.00</span></td>
+              </tr>
+              <tr>
+                 <th scope="row">Total</th>
+                 <td>£<span class="val">0.00</span></td>
+              </tr>
+          </tbody>
+        </table>
+        <p>
+          <a href="#">Update summary</a>
+        </p>
+      </div>
       <!-- submit -->
       <div class="form-group inline">
         <button class="button" type="submit">Save and continue</button>
