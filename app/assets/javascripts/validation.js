@@ -98,7 +98,7 @@ function validate(e) {
 
           $('.error-summary-list:first').append(
             String(
-              '<li><a href="#' + id + '">- ' + text + ' - ' + errorMessage.toLowerCase() + '</a></li>'
+              '<li><a href="#' + id + '">' + text + ' ' + errorMessage.toLowerCase() + '</a></li>'
             )
           );
         }
@@ -145,7 +145,7 @@ function validate(e) {
             // Add the error to the summary list at the top of the page
             $('.error-summary-list:first').append(
               String(
-                '<li><a href="#' + id + '">- ' + text + ' - ' + errorMessage.toLowerCase() + '</a></li>'
+                '<li><a href="#' + id + '">' + text + ' ' + errorMessage.toLowerCase() + '</a></li>'
               )
             );
 
