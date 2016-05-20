@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Step 8</span>
+          Compliance - procurement
+        </h1>
+    </div>
+    <div class="main-content">
+      <p>Before answering this section you should be familiar with the <a href="https://www.gov.uk/government/publications/european-structural-and-investment-funds-programme-guidance" rel="external">rules on procurement</a> for projects applying for European Structural and Investment funds (ESIF).</p>
+      <form action="/compliance/state-aid">
+        <div class="form-group">
+          <h2 class="form-label">Have you filled in the <a href="#">procurement register</a> with any contracts relating to the project?</h2>
+          <fieldset class="inline">
+            <legend class="visuallyhidden">Have you filled in the procurement register with any contracts relating to the project?</legend>
+
+            <label for="procurement-register-yes" class="block-label">
+              <input type="radio" name="procurement-register" value="Yes" id="procurement-register-yes">
+              Yes
+            </label>
+
+            <label for="procurement-register-no" class="block-label">
+              <input type="radio" name="procurement-register" value="No" id="procurement-register-no">
+              No
+            </label>
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <h2 class="form-label">Does your procurement meet ESIF rules and requirements?</h2>
+          <fieldset class="inline">
+            <legend class="visuallyhidden">Does your procurement meet ESIF rules and requirements?</legend>
+
+            <label for="esif-rules-yes" class="block-label">
+              <input type="radio" name="esif-rules" value="Yes" id="esif-rules-yes">
+              Yes
+            </label>
+
+            <label for="esif-rules-no" class="block-label">
+              <input type="radio" name="esif-rules" value="No" id="esif-rules-no">
+              No
+            </label>
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <h2 class="form-label">Are your procurement procedures documented?</h2>
+          <fieldset class="inline">
+            <legend class="visuallyhidden">Are your procurement procedures documented?</legend>
+
+            <label for="procedures-documented-yes" class="block-label">
+              <input type="radio" name="procedures-documented" value="Yes" id="procedures-documented-yes">
+              Yes
+            </label>
+
+            <label for="procedures-documented-no" class="block-label">
+              <input type="radio" name="procedures-documented" value="No" id="procedures-documented-no">
+              No
+            </label>
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <h2 class="form-label">Has all procurement been advertised according to ESIF rules?</h2>
+          <fieldset class="inline">
+            <legend class="visuallyhidden">Has all procurement been advertised according to ESIF rules?</legend>
+
+            <label for="advertised-yes" class="block-label">
+              <input type="radio" name="advertised" value="Yes" id="advertised-yes">
+              Yes
+            </label>
+
+            <label for="advertised-no" class="block-label">
+              <input type="radio" name="advertised" value="No" id="advertised-no">
+              No
+            </label>
+          </fieldset>
+        </div>
+        <!-- submit -->
+        <div class="form-group inline submit-buttons">
+          <button class="button" type="submit">Save and continue</button>
+          <button class="button-hyperlink">Save and quit</button>
+        </div>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}
