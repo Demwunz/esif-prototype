@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Step 9</span>
+          Declaration
+        </h1>
+    </div>
+    <div class="main-content">
+      <form action="/full-application">
+        <div class="form-group">
+          <h2 class="form-label">Can all the information in this application be shared with the Local Enterprise Partner committee?</h2>
+          <fieldset class="inline">
+            <legend class="visuallyhidden">Can all the information in this application be shared with the Local Enterprise Partner committee?</legend>
+
+            <label for="partner-committee-yes" class="block-label">
+              <input type="radio" name="partner-committee" value="Yes" id="partner-committee-yes">
+              Yes
+            </label>
+
+            <label for="partner-committee-no" class="block-label">
+              <input type="radio" name="partner-committee" value="No" id="partner-committee-no">
+              No
+            </label>
+          </fieldset>
+        </div>
+        <p>By sending this application you confirm that:</p>
+        <ul class="list list-bullet">
+          <li>information in this application can be used according to the <a href="/privacy">privacy policy</a></li>
+          <li>you have authority to apply on behalf of the organisation</li>
+          <li>the information in this application is accurate and complete as far as you know</li>
+          <li>you will report any change in circumstances that may affect this application promptly</li>
+          <li>any third parties mentioned in this application are aware that their information has been included and how it may be used</li>
+        </ul>
+        <div class="panel">
+          <p>You may be prosecuted and your funding withdrawn or have to be repaid if you make a false or misleading application.</p>
+        </div>
+        <p>Any expenses you incur or contracts you enter into before your funding’s agreed are at your own financial risk.</p>
+
+        <!-- submit -->
+        <div class="form-group inline submit-buttons">
+          <button class="button" type="submit">You agree - Send your application</button>
+        </div>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

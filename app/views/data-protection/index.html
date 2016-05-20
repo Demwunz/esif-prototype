@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Step 9</span>
+          Data Protection Act
+        </h1>
+    </div>
+    <div class="main-content">
+      <h2 class="heading-medium">Submission</h2>
+
+      <p>You must check the confirmation box below in order to progress this application.</p>
+
+      <p>The Data Protection Act puts obligations on users of personal information and lays down principles for its use. One principle states that the information has to be processed fairly and lawfully. This means you are entitled to know how we intend to use any information you provide. You can then decide whether to proceed with your application and to give your information to us.</p>
+
+      <p>The Department for Communities &amp; Local Government (DCLG, for ERDF) and the Department for Work and Pensions (DWP, for ESF) undertake to use its best endeavours to hold confidential any information provided in any application form submitted, subject to our contracting obligations under law, including the Freedom of Information Act 2000. If you consider that any of the information submitted in the application form should not be disclosed because of its sensitivity then this should be stated with the reason for considering it sensitive. DCLG and/or DWP will then consult with you in considering any request received under the Freedom of Information Act 2000 before replying to such a request.</p>
+
+      <h3 class="heading-small">Use of your personal information</h3>
+
+      <p>Our main use for your personal information is to process and assess your Outline Application for funding and capacity to administer that funding. The Department may publish details about this application on the Departments website. This may include all or some of the project and applicant details.</p>
+
+      <p>It is Government Policy to share information with relevant agencies for the purposes of Fraud prevention. By signing this Application you are giving your consent to the information contained within to be used for such purposes.</p>
+
+      <p>We may use your information for the purposes of statistical analysis and may share anonymised information with other government departments, agencies or third parties for statistical analysis and reporting purposes.</p>
+
+      <p>Our policies and procedures in relation to the application and evaluation of grants are subject to audit and review by both internal and external auditors. Your information may be subject to such audit and review.</p>
+
+      <p>Sometimes you will be required to supply personal information relating to third parties, ie delivery partners. In these circumstances you must ensure that you inform the delivery partner how you use their information and that this information will be passed to us.</p>
+
+      <p>You may be required to supply some sensitive personal information. The Data Protection Act defines sensitive personal information as &ldquo;racial or ethnic origin, political opinions, religious beliefs, Trade Union membership, physical or mental health, criminal offences and proceedings&rdquo;. We will only use this information for the purpose for which you have provided your explicit consent. We may also use this information for the purposes of statistical analysis and may pass this to other Government Departments on an anonymous basis for this purpose.</p>
+
+      <p>We will not hold your information for longer than is necessary. We will hold the majority of your information for a minimum of 3 years after programme closure, currently expected to be 2032, unless we have a legitimate reason to keep this for longer, for instance defending any legal proceedings that may be brought against us by any person or body in relation to your application or the services we have provided or as is required by law or any regulatory body or recommended by any relevant code of practice.</p>
+
+      <p>If you believe that any information that we hold about you is inaccurate or incorrect, please tell us and we will correct it.</p>
+
+      <form action="/declaration">
+        <fieldset>
+          <legend class="visually-hidden"></legend>
+          <div class="form-group">
+            <label for="confirm" class="block-label" data-target="example_confirm">
+              <input type="checkbox" name="confirm" value="Wales" id="confirm" aria-controls="confirm" aria-expanded="false">
+              I confirm that I have read and agree to the above information regarding the data protection act
+            </label>
+          </div>
+        </fieldset>
+        <!-- submit -->
+        <div class="form-group inline submit-buttons">
+          <button class="button" type="submit">Save and continue</button>
+          <button class="button-hyperlink">Save and quit</button>
+        </div>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}
