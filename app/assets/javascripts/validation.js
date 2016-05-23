@@ -166,7 +166,7 @@ function validate(e) {
         var id = $(this).attr('id');
         var formGroup = $(this).parents('.form-group');
         var label = $('label[for="' + $(this).attr('id') + '"]');
-        var errorMessage = $(this).parents('fieldset').attr('data-error');
+        var errorMessage = $(this).c('fieldset').attr('data-error');
 
         if ($(this).val().length === 0) {
           invalid.push($(this).attr('id'));
