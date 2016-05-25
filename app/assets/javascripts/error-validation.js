@@ -1,68 +1,115 @@
 var ev = window.ev || {};
 // ev is an abbreviation of "error validation"
 
+ev.defaults = {
+  errors : {
+    radio : 'Choose an option',
+    checkbox : 'Must be checked',
+    textfield : 'Cannot be empty',
+    date : 'Must have correct date format',
+    select : 'Choose an option'
+  }
+};
+
 ev.checkFields = function() {
   var formgroups = $('[data-required]');
 
   formgroups.each(function(i, el) {
     var formgroup = $(el);
+    var type = formgroup.data('field');
 
     if(formgroup.data('invalid')) {
+
     } else {
-      ev.getFields(formgroup);
+      ev.field[type](formgroup);
     }
 
   });
 };
-
-ev.getFields = function(formgroup) {
-  var textfield = formgroup.find('input[type="text"],input[type="password"],input[type="email"]'),
-  checkbox = formgroup.find('input[type="checkbox"]'),
-  radios =formgroup.find('input[type="radio"]'),
-  textarea = formgroup.find('textarea'),
-  select = formgroup.find('select');
-
-  if (select.length) {
-    ev.select(formgroup, select);
-  } else if (radios.length) {
-    ev.radios(formgroup, radios);
-  } else if (checkbox.length) {
-    ev.checkBox(formgroup, checkbox);
-  } else if (textarea.length) {
-    ev.textfield(formgroup, textarea);
+ev.setField = function(invalid, formgroup, label) {
+  if(invalid) {
+    ev.showFieldError(formgroup, label);
   } else {
-    ev.textfield(formgroup, textfield);
+    ev.resetField(formgroup, label);
+  }
+}
+ev.resetField = function(formgroup, label) {
+  label.removeClass('form-label-bold');
+  formgroup.data('invalid', false);
+}
+ev.field = {
+  select : function(formgroup) {
+    var select = formgroup.find('select');
+    var label = formgroup.find('label');
+    var selected_option = !select[0].selectedIndex;
+
+    ev.setField(selected_option, formgroup, label);
+
+  },
+  radio : function(formgroup) {
+    var radios = formgroup.find(":radio");
+    var label = formgroup.find('h2');
+    var not_checked = !ev.checked(radios);
+
+    ev.setField(not_checked, formgroup, label);
+  },
+  checkbox : function(formgroup) {
+    var checkox = formgroup.find(":checkbox");
+    var label = formgroup.find('label');
+    var not_checked = !ev.checked(checkox);
+
+    ev.setField(not_checked, formgroup, label);
+
+  },
+  textfield : function(formgroup) {
+    var field = formgroup.find('input');
+    var label = formgroup.find('label');
+    var not_filled = !ev.populated(field);
+
+    ev.setField(not_filled, formgroup, label);
+
+  },
+  date : function(formgroup) {
+    var fields = formgroup.find('input');
+    var label = formgroup.find('legend');
+    var filled_fields = ev.populated(fields) !== 3;
+
+    ev.setField(filled_fields, formgroup, label);
   }
 };
 
-ev.select = function(field) {
-
+ev.populated = function(fields) {
+  return fields.filter(function(i, el) {
+    return $(el).val();
+  }).length;
 };
 
-ev.radios = function(field) {
-
+ev.checked = function(fields) {
+  return fields.filter(function(i, el) {
+    return $(el).is(':checked');
+  }).length;
 };
 
-ev.checkbox = function(field) {
+ev.showFieldError = function(formgroup, label) {
+  var error_message;
+  var data_error = formgroup.data('error');
 
-};
-
-ev.textfield = function(formgroup, field) {
-  if(!field.val()) {
-    formgroup.data('invalid', true);
-    ev.showFieldError(formgroup);
+  if(typeof data_error === undefined) {
+    error_message = formgroup.data('error');
+  } else {
+    error_message = ev.defaults.errors[formgroup.data('field')];
   }
-};
 
-ev.showFieldError = function(formgroup) {
-  var errormessage = formgroup.addClass('error').data('error'),
-    label = formgroup.find('label');
+  formgroup.addClass('error').data('invalid', true);
 
   label.addClass('form-label-bold')
-    .append('<span class="error-message">' + errormessage + '</span>');
+    .append('<span class="error-message">' + error_message + '</span>');
 };
+
 (function(){
-  // $('form').on('submit', function (event) {
+  'use strict';
+  $('form').on('submit', function (event) {
     ev.checkFields();
-  // });
+    return false;
+  });
 })();

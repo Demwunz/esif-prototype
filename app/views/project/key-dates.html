@@ -20,8 +20,8 @@
     <div class="main-content">
       <form action="/strategy">
         <!-- project start date -->
-        <fieldset class="form-group">
-          <legend>Project start date</legend>
+        <fieldset class="form-group" data-required data-field="date" data-error="Use correct format">
+          <legend class="form-label-bold">Project start date</legend>
           <div class="form-date">
 
             <p class="form-hint">For example, 31 3 2016</p>
@@ -45,8 +45,8 @@
         </fieldset>
 
         <!-- financial completion date -->
-        <fieldset class="form-group">
-          <legend>Financial completion date</legend>
+        <fieldset class="form-group" data-required data-field="date" data-error="Use correct format">
+          <legend class="form-label-bold">Financial completion date</legend>
           <div class="form-date">
 
             <p class="form-hint">For example, 31 4 2016</p>
@@ -70,8 +70,8 @@
         </fieldset>
 
         <!-- financial completion date -->
-        <fieldset class="form-group">
-          <legend>Project end date</legend>
+        <fieldset class="form-group" data-required data-field="date" data-error="Use correct format">
+          <legend class="form-label-bold">Project end date</legend>
           <div class="form-date">
 
             <p class="form-hint">For example, 31 5 2016</p>
@@ -99,12 +99,12 @@
             List any project milestones and dates that they will be met
           </legend>
           <div class="repeat">
-            <div class="form-group">
+            <div class="form-group" data-required data-field="textfield" data-error="Cannot be empty">
               <label class="form-label" for="milestone-description">Milestone Description</label>
               <input type="text" class="form-control" id="milestone-description">
             </div>
             <!-- financial completion date -->
-            <fieldset class="form-group">
+            <fieldset class="form-group" data-required data-field="date" data-error="Use correct format">
               <legend class="heading-small">Milestone date</legend>
               <div class="form-date">
 

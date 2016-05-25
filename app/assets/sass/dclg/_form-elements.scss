@@ -23,6 +23,9 @@ fieldset{
   &:first-child{
     padding-top:0;
   }
+  &.inline {
+    padding-top:0;
+  }
 }
 .main-content .form-group {
   .form-control{
