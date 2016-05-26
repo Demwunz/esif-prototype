@@ -16,17 +16,17 @@
         <fieldset>
           <legend class="visually-hidden">About your organisation</legend>
           <!-- organisation name -->
-          <div class="form-group" data-required data-error="Cannot be blank">
+          <div class="form-group" data-required  data-field="textfield">
             <label class="form-label" for="organisation-name">Organisation name</label>
             <input type="text" class="form-control" id="organisation-name">
           </div>
           <!-- organisation type -->
-          <div class="form-group" data-required data-error="Cannot be blank">
+          <div class="form-group" data-required  data-field="textfield">
             <label class="form-label" for="organisation-type">Organisation type</label>
             <input type="text" class="form-control" id="organisation-type">
           </div>
           <!-- sme? -->
-          <div class="form-group" data-required data-error="Choose an option">
+          <div class="form-group" data-required  data-field="radio">
             <h2 class="form-label">Is this a small or medium-sized enterprise (SME)?</h2>
             <fieldset class="inline">
               <legend class="visuallyhidden">Is this a small or medium-sized enterprise (SME)?</legend>
@@ -43,12 +43,12 @@
             </fieldset>
           </div>
           <!-- company or charity number-->
-          <div class="form-group" data-required data-error="Cannot be blank">
+          <div class="form-group" data-required  data-field="textfield">
             <label class="form-label" for="company-charity-number">Company or charity registration number</label>
             <input type="text" class="form-control" id="company-charity-number">
           </div>
           <!-- vat number -->
-          <div class="form-group" data-required data-error="Cannot be blank">
+          <div class="form-group">
             <label class="form-label" for="vat-number">
               VAT number
               <span class="form-hint">if applicable</span>
@@ -56,7 +56,7 @@
             <input type="text" class="form-control" id="vat-number">
           </div>
           <!-- sme? -->
-          <div class="form-group" data-required data-error="Choose an option">
+          <div class="form-group" data-required  data-field="radio">
             <h2 class="form-label-bold">Has this organisation previously worked on a project funded through ESF, ERDF or EAFRD?</h2>
             <fieldset class="inline">
               <legend class="visuallyhidden">Has this organisation previously worked on a project funded through ESF, ERDF or EAFRD?</legend>

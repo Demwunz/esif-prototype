@@ -13,15 +13,15 @@
     <div class="main-content">
       <p>Before answering this section you should be familiar with the <a href="https://www.gov.uk/government/publications/european-structural-and-investment-funds-programme-guidance" rel="external">rules on procurement</a> for projects applying for European Structural and Investment funds (ESIF).</p>
       <form action="/data-protection">
-        <div class="form-group full">
+        <div class="form-group full" data-required data-field="textfield">
           <label for="systems" class="form-label">What systems will you have to manage any State Aid requirements?</label>
           <textarea class="form-control" id="systems" rows="10"></textarea>
         </div>
-        <div class="form-group full">
+        <div class="form-group full" data-required data-field="textfield">
           <label for="organisations" class="form-label">List any organisations you know of that may receive payments from the project</label>
           <textarea class="form-control" id="organisations" rows="10"></textarea>
         </div>
-        <div class="form-group">
+        <div class="form-group" data-required data-field="radio">
           <h2 class="form-label">Are payments to these organisations and your delivery partners allowed under State Aid regulations?</h2>
           <fieldset class="inline">
             <legend class="visuallyhidden">Are payments to these organisations and your delivery partners allowed under State Aid regulations?</legend>
@@ -37,7 +37,7 @@
             </label>
           </fieldset>
         </div>
-        <div class="form-group">
+        <div class="form-group" data-required data-field="radio">
           <h2 class="form-label">Do all organisations that could receive payments meet the State Aid test?</h2>
           <fieldset class="inline">
             <legend class="visuallyhidden">Do all organisations that could receive payments meet the State Aid test?</legend>

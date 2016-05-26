@@ -1,115 +1,118 @@
-var ev = window.ev || {};
-// ev is an abbreviation of "error validation"
+var v = window.v || {};
+// v is an abbreviation of "validate"
 
-ev.defaults = {
-  errors : {
-    radio : 'Choose an option',
-    checkbox : 'Must be checked',
-    textfield : 'Cannot be empty',
-    date : 'Must have correct date format',
-    select : 'Choose an option'
+v.defaults = {
+  select : {
+    fields : 'select',
+    label : 'label',
+    error : 'Choose an option',
+    validation : 'checked'
+  },
+  radio : {
+    fields : ':radio',
+    label : 'h2',
+    error : 'Choose an option',
+    validation : 'checked'
+  },
+  checkbox : {
+    fields : ':checkbox',
+    label : 'h2',
+    error : 'Must be checked',
+    validation : 'checked'
+  },
+  textfield : {
+    fields : 'input[type="text"], input[type="password"], input[type="number"], textarea',
+    label : 'label',
+    error : 'Cannot be empty',
+    validation: 'populated'
+  },
+  date : {
+    fields : 'input',
+    label : 'legend',
+    error : 'Must have correct date format',
+    validation: 'populated'
   }
 };
 
-ev.checkFields = function() {
+v.checkFields = function() {
   var formgroups = $('[data-required]');
 
   formgroups.each(function(i, el) {
     var formgroup = $(el);
-    var type = formgroup.data('field');
-
-    if(formgroup.data('invalid')) {
-
-    } else {
-      ev.field[type](formgroup);
-    }
-
+      v.field(formgroup);
   });
 };
-ev.setField = function(invalid, formgroup, label) {
-  if(invalid) {
-    ev.showFieldError(formgroup, label);
+v.setField = function(valid, formgroup, label) {
+  if(valid) {
+    v.resetFieldErrors(formgroup, label);
   } else {
-    ev.resetField(formgroup, label);
-  }
-}
-ev.resetField = function(formgroup, label) {
-  label.removeClass('form-label-bold');
-  formgroup.data('invalid', false);
-}
-ev.field = {
-  select : function(formgroup) {
-    var select = formgroup.find('select');
-    var label = formgroup.find('label');
-    var selected_option = !select[0].selectedIndex;
-
-    ev.setField(selected_option, formgroup, label);
-
-  },
-  radio : function(formgroup) {
-    var radios = formgroup.find(":radio");
-    var label = formgroup.find('h2');
-    var not_checked = !ev.checked(radios);
-
-    ev.setField(not_checked, formgroup, label);
-  },
-  checkbox : function(formgroup) {
-    var checkox = formgroup.find(":checkbox");
-    var label = formgroup.find('label');
-    var not_checked = !ev.checked(checkox);
-
-    ev.setField(not_checked, formgroup, label);
-
-  },
-  textfield : function(formgroup) {
-    var field = formgroup.find('input');
-    var label = formgroup.find('label');
-    var not_filled = !ev.populated(field);
-
-    ev.setField(not_filled, formgroup, label);
-
-  },
-  date : function(formgroup) {
-    var fields = formgroup.find('input');
-    var label = formgroup.find('legend');
-    var filled_fields = ev.populated(fields) !== 3;
-
-    ev.setField(filled_fields, formgroup, label);
+    v.showFieldErrors(formgroup, label);
   }
 };
+v.resetFieldErrors = function(formgroup, label) {
+  label.removeClass('form-label-bold');
+  formgroup
+    .data('invalid', false)
+    .find('.error-message').remove();
+};
+v.field = function(formgroup) {
+    var params = v.defaults[formgroup.data('field')],
+      customParams = (function customParams() {
+      var custom = formgroup.data('params');
+        if(custom) {
+          $.map(custom, function( val, key ) {
+            return params[key] = val;
+          });
+        }
+    })(),
+    valid = function() {
+      var fields = formgroup.find(params.fields),
+      validation = params.validation;
 
-ev.populated = function(fields) {
+      if(formgroup.data('field') === 'select') {
+        validation = !fields[0].selectedIndex;
+      }
+
+      return v[params.validation](fields);
+    },
+    label = formgroup.find(params.label);
+    v.setField(valid(), formgroup, label);
+};
+
+v.populated = function(fields) {
   return fields.filter(function(i, el) {
     return $(el).val();
   }).length;
 };
 
-ev.checked = function(fields) {
+v.checked = function(fields) {
   return fields.filter(function(i, el) {
     return $(el).is(':checked');
   }).length;
 };
 
-ev.showFieldError = function(formgroup, label) {
-  var error_message;
-  var data_error = formgroup.data('error');
+v.showFieldErrors = function(formgroup, label) {
+  var error_message,
+    data_error = formgroup.data('error'),
+    page_error_list = $('#field-errors').find('ul');
 
-  if(typeof data_error === undefined) {
-    error_message = formgroup.data('error');
+  if(data_error) {
+    error_message = data_error;
   } else {
-    error_message = ev.defaults.errors[formgroup.data('field')];
+    error_message = v.defaults[formgroup.data('field')].error;
   }
 
   formgroup.addClass('error').data('invalid', true);
 
-  label.addClass('form-label-bold')
-    .append('<span class="error-message">' + error_message + '</span>');
+  label
+    .addClass('form-label-bold')
+    .append('<span class="visually-hidden">:</span><span class="error-message">' + error_message + '</span>');
 };
 
 (function(){
   'use strict';
   $('form').on('submit', function (event) {
-    ev.checkFields();
+    v.checkFields();
     return false;
   });
 })();
