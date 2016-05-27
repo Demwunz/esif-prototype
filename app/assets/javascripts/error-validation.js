@@ -2,117 +2,114 @@ var v = window.v || {};
 // v is an abbreviation of "validate"
 
 v.defaults = {
-  select : {
-    fields : 'select',
-    label : 'label',
-    error : 'Choose an option',
-    validation : 'checked'
+  select: {
+    fields: 'select',
+    label: 'label',
+    error: 'Choose an option'
   },
-  radio : {
-    fields : ':radio',
-    label : 'h2',
-    error : 'Choose an option',
-    validation : 'checked'
+  radio: {
+    fields: 'input:radio',
+    label: 'h2',
+    error: 'Choose an option'
   },
-  checkbox : {
-    fields : ':checkbox',
-    label : 'h2',
-    error : 'Must be checked',
-    validation : 'checked'
+  checkbox: {
+    fields: 'input:checkbox',
+    label: 'h2',
+    error: 'Must be checked'
   },
-  textfield : {
-    fields : 'input[type="text"], input[type="password"], input[type="number"], textarea',
-    label : 'label',
-    error : 'Cannot be empty',
-    validation: 'populated'
+  textfield: {
+    fields: 'input:text, input[type="password"], input[type="number"], textarea',
+    label: 'label',
+    error: 'Cannot be empty'
   },
-  date : {
-    fields : 'input',
-    label : 'legend',
-    error : 'Must have correct date format',
-    validation: 'populated'
+  date: {
+    fields: 'input',
+    label: 'legend',
+    error: 'Must have correct date format'
   }
 };
 
-v.checkFields = function() {
+v.getFields = function() {
   var formgroups = $('[data-required]');
 
   formgroups.each(function(i, el) {
-    var formgroup = $(el);
-      v.field(formgroup);
+    var formgroup = $(el),
+      params = v.setParams(formgroup);
+
+    v.setField(formgroup, params);
   });
 };
-v.setField = function(valid, formgroup, label) {
+
+v.setField = function(formgroup, params) {
+  var valid = v.validateField(formgroup, params);
+
   if(valid) {
-    v.resetFieldErrors(formgroup, label);
+    v.resetFieldErrors(formgroup, params);
   } else {
-    v.showFieldErrors(formgroup, label);
+    v.setFieldErrors(formgroup, params);
   }
 };
-v.resetFieldErrors = function(formgroup, label) {
-  label.removeClass('form-label-bold');
+
+v.resetFieldErrors = function(formgroup, params) {
   formgroup
+    .find(params.label)
+    .removeClass('form-label-bold');
+  formgroup
+    .removeClass('error')
     .data('invalid', false)
-    .find('.error-message').remove();
+    .find('.error-message')
+    .remove();
 };
-v.field = function(formgroup) {
-    var params = v.defaults[formgroup.data('field')],
-      customParams = (function customParams() {
-      var custom = formgroup.data('params');
-        if(custom) {
-          $.map(custom, function( val, key ) {
-            return params[key] = val;
-          });
-        }
-    })(),
-    valid = function() {
-      var fields = formgroup.find(params.fields),
-      validation = params.validation;
 
-      if(formgroup.data('field') === 'select') {
-        validation = !fields[0].selectedIndex;
+v.setParams = function(formgroup) {
+  var params = v.defaults[formgroup.data('field')],
+    customParams = (function customParams() {
+      var custom_params = formgroup.data('params');
+      if (custom_params) {
+        $.map(custom_params, function(val, key) {
+          params[key] = val;
+        });
       }
-
-      return v[params.validation](fields);
-    },
-    label = formgroup.find(params.label);
-    v.setField(valid(), formgroup, label);
+    })();
+    return params;
 };
 
-v.populated = function(fields) {
-  return fields.filter(function(i, el) {
-    return $(el).val();
-  }).length;
-};
+v.validateField = function(formgroup, params){
+  var valid,
+    field = formgroup.find(params.fields);
 
-v.checked = function(fields) {
-  return fields.filter(function(i, el) {
-    return $(el).is(':checked');
-  }).length;
-};
-
-v.showFieldErrors = function(formgroup, label) {
-  var error_message,
-    data_error = formgroup.data('error'),
-    page_error_list = $('#field-errors').find('ul');
-
-  if(data_error) {
-    error_message = data_error;
+  if (params.fields === 'select') {
+    valid = field[0].selectedIndex;
+  } else if(params.fields === 'input:radio' || params.fields === 'input:checkbox'){
+    valid = field.filter(function(i, el) {
+      return $(el).is(':checked');
+    }).length;
   } else {
-    error_message = v.defaults[formgroup.data('field')].error;
+    valid = field.val();
   }
+  return valid;
+};
+
+v.setFieldErrors = function(formgroup, params) {
+  var field = formgroup.find(params.fields),
+    label = formgroup.find(params.label),
+    field_id = field[0].id,
+    error_summary_list = $('.error-summary').show().find('ul');
 
   formgroup.addClass('error').data('invalid', true);
 
+  error_summary_list
+    .append('<li><a href="#' + field_id + '">' + label.text() +  ' ' + params.error.toLowerCase() + '</a></li>');
+
   label
     .addClass('form-label-bold')
-    .append('<span class="visually-hidden">:</span><span class="error-message">' + error_message + '</span>');
+    .append('<span class="visually-hidden">:</span><span class="error-message">' + params.error + '</span>');
 };
 
-(function(){
+(function() {
   'use strict';
-  $('form').on('submit', function (event) {
-    v.checkFields();
+  $('form').on('submit', function(event) {
+    v.getFields();
     return false;
   });
 })();
