@@ -1,5 +1,6 @@
 var path = require('path'),
     express = require('express'),
+    browserSync = require('browser-sync'),
     nunjucks = require('express-nunjucks'),
     routes = require(__dirname + '/app/routes.js'),
     favicon = require('serve-favicon'),
@@ -38,6 +39,17 @@ nunjucks.setup({
   watch: true,
   noCache: true
 }, app);
+
+// require core and custom filters, merges to one object
+// and then add the methods to nunjucks env obj
+nunjucks.ready(function(nj) {
+  var coreFilters = require(__dirname + '/lib/core_filters.js')(nj),
+    customFilters = require(__dirname + '/app/filters.js')(nj),
+    filters = Object.assign(coreFilters, customFilters);
+  Object.keys(filters).forEach(function(filterName) {
+    nj.addFilter(filterName, filters[filterName]);
+  });
+});
 
 // Middleware to serve static assets
 app.use('/public', express.static(__dirname + '/public'));
@@ -130,4 +142,23 @@ console.log("\nGOV.UK Prototype kit v" + releaseVersion);
 console.log("\nNOTICE: the kit is for building prototypes, do not use it for production services.");
 
 // start the app
-utils.findAvailablePort(app);
+utils.findAvailablePort(app, function(port) {
+  console.log('Listening on port ' + port + '   url: http://localhost:' + port);
+  if (env === 'production') {
+    app.listen(port);
+  } else {
+    app.listen(port-50,function()
+    {
+      browserSync({
+        proxy:'localhost:'+(port-50),
+        port:port,
+        ui:false,
+        files:['public/**/*.*','app/views/**/*.*'],
+        ghostmode:false,
+        open:false,
+        notify:false,
+        logLevel: "error"
+      });
+    });
+  }
+});
