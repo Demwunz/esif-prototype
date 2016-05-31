@@ -17,23 +17,28 @@
           <label class="form-label" for="project-name">Project name</label>
           <input type="text" class="form-control" id="project-name">
         </div>
-        <div class="form-group full"  data-required  data-field="textfield">
-          <label for="project-summary" class="form-label">Project Summary</label>
-          <textarea class="form-control" id="project-summary" rows="10"></textarea>
+        <div class="form-group full" data-required  data-field="textfield">
+          <label for="project-summary" class="form-label">
+            Project summary
+            <span class="form-hint">Explain what the project will achieve, for example 'reduce youth unemployment by giving free after school coding classes for school students after school'.</span>
+          </label>
+          <textarea class="form-control" id="project-summary" cols="30" rows="10"></textarea>
         </div>
-        <div class="form-group full"  data-required  data-field="textfield">
-          <label for="project-benefit" class="form-label">Who will benefit from your project?</label>
-          <textarea class="form-control" id="project-benefit" rows="10"></textarea>
+        <div class="form-group full" data-required  data-field="textfield">
+          <label for="project-benefit" class="form-label">Who will your project help?</label>
+          <textarea class="form-control" id="project-benefit" cols="30" rows="10"></textarea>
         </div>
-        <div class="form-group full"  data-required  data-field="textfield">
-          <label for="project-located" class="form-label">Where is your project located?</label>
-          <textarea class="form-control" id="project-located" rows="10"></textarea>
+        <div class="form-group full" data-required  data-field="textfield">
+          <label for="project-located" class="form-label">Project location</label>
+          <textarea class="form-control" id="project-located" cols="30" rows="10"></textarea>
         </div>
         <!-- sme? -->
-        <div class="form-group"  data-required  data-field="radio">
-          <h2 class="form-label-bold">Does your project cover more than one LEP area?</h2>
+        <div class="form-group" data-required  data-field="radio">
+          <h2 class="form-label-bold">Does your project cover any Local Enterprise Partnership (LEP) areas?</h2>
           <fieldset class="inline">
-            <legend class="visuallyhidden">Does your project cover more than one LEP area?</legend>
+            <legend class="visuallyhidden">Does your project cover an LEP?</legend>
+            <span class="form-hint">To find out whether your project overlaps with a LEP, refer to the information you got from
+              <a href="https://www.gov.uk/european-structural-investment-funds"> Funding Finder</a> (FF). From that information, look for the 'Location' section. This section has see a list of LEPs covered by your fund.</a></span>
 
             <label for="lep-yes" class="block-label">
               <input type="radio" name="lep" value="Yes" id="lep-yes">
@@ -50,7 +55,7 @@
         <div class="form-group"  data-required  data-field="radio">
           <h2 class="form-label-bold">Did the approval of your outline application contain any conditions or recommendations?</h2>
           <fieldset class="inline">
-            <legend class="visuallyhidden">Did the approval of your outline application contain any conditions or recommendations?</legend>
+            <legend class="visuallyhidden">Did the approval of your outline application include any conditions or recommendations?</legend>
 
             <label for="conditions-yes" class="block-label">
               <input type="radio" name="conditions" value="Yes" id="conditions-yes">
