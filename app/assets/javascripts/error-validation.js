@@ -119,6 +119,6 @@ app.setFieldErrors = function(formgroup, params, i) {
   'use strict';
   $('form').on('submit', function(event) {
     var valid = app.getFields();
-    return false;
+    return valid;
   });
 })();
