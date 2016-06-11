@@ -4,6 +4,7 @@
 
   <main id="content" role="main">
     {% include "includes/phase_banner_alpha.html" %}
+    {% include 'includes/page_errors.html' %}
     <div class="main-header">
         <h1 class="heading-large">
           <span class="heading-secondary">Step 1</span>
@@ -14,46 +15,46 @@
       <form action="/project-partners">
         <fieldset>
           <legend>Address</legend>
-          <div class="form-group">
+          <div class="form-group" data-required  data-field="textfield">
             <label class="form-label" for="building-name">Building number or name</label>
             <input type="text" class="form-control" id="building-name">
           </div>
-          <div class="form-group">
+          <div class="form-group" data-required  data-field="textfield">
             <label class="form-label" for="street">Street</label>
             <input type="text" class="form-control" id="street">
           </div>
-          <div class="form-group">
+          <div class="form-group" data-required  data-field="textfield">
             <label class="form-label" for="town-city">Town/city</label>
             <input type="text" class="form-control" id="town-city">
           </div>
-          <div class="form-group">
+          <div class="form-group" data-required  data-field="textfield">
             <label class="form-label" for="county">
               County
               <span class="form-hint">Eg if London, Greater London; if Manchester, Greater Manchester</span>
             </label>
             <input type="text" class="form-control" id="county">
           </div>
-          <div class="form-group">
+          <div class="form-group" data-required  data-field="textfield">
             <label class="form-label" for="postcode">Postcode</label>
             <input type="text" class="form-control small" id="postcode">
           </div>
         </fieldset>
         <fieldset>
           <legend>Contact details</legend>
-          <div class="form-group">
+          <div class="form-group" data-required  data-field="textfield">
             <label class="form-label" for="main-contact">Name</label>
             <input type="text" class="form-control" id="main-contact">
           </div>
-          <div class="form-group">
+          <div class="form-group" data-required  data-field="textfield">
             <label class="form-label" for="organisation-position">Role in the organisation</label>
             <input type="text" class="form-control" id="organisation-position">
           </div>
-          <div class="form-group">
+          <div class="form-group" data-required  data-field="textfield">
             <label class="form-label" for="email-address">Email address</label>
             <input type="text" class="form-control" id="email-address">
           </div>
-          <div class="form-group">
-            <label class="form-label" for="contact-number">Telephone number</label>
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="contact-number">Telepphone number</label>
             <input type="text" class="form-control" id="contact-number">
           </div>
         </fieldset>

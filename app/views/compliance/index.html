@@ -4,6 +4,8 @@
 
   <main id="content" role="main">
     {% include "includes/phase_banner_alpha.html" %}
+    {% include 'includes/page_errors.html' %}
+    
     <div class="main-header">
         <h1 class="heading-large">
           <span class="heading-secondary">Step 8</span>
@@ -13,7 +15,7 @@
     <div class="main-content">
       <p>Before answering this section you should be familiar with the <a href="https://www.gov.uk/government/publications/european-structural-and-investment-funds-programme-guidance" rel="external">rules on procurement</a> for projects applying for European Structural and Investment funds (ESIF).</p>
       <form action="/compliance/state-aid">
-        <div class="form-group">
+        <div class="form-group" data-required data-field="radio">
           <h2 class="form-label">Have you filled in the <a href="#">procurement register</a> with any contracts relating to the project?</h2>
           <fieldset class="inline">
             <legend class="visuallyhidden">Have you filled in the procurement register with any contracts relating to the project?</legend>
@@ -29,7 +31,7 @@
             </label>
           </fieldset>
         </div>
-        <div class="form-group">
+        <div class="form-group" data-required data-field="radio">
           <h2 class="form-label">Does your procurement meet ESIF rules and requirements?</h2>
           <fieldset class="inline">
             <legend class="visuallyhidden">Does your procurement meet ESIF rules and requirements?</legend>
@@ -45,7 +47,7 @@
             </label>
           </fieldset>
         </div>
-        <div class="form-group">
+        <div class="form-group" data-required data-field="radio">
           <h2 class="form-label">Are your procurement procedures documented?</h2>
           <fieldset class="inline">
             <legend class="visuallyhidden">Are your procurement procedures documented?</legend>
@@ -61,7 +63,7 @@
             </label>
           </fieldset>
         </div>
-        <div class="form-group">
+        <div class="form-group" data-required data-field="radio">
           <h2 class="form-label">Has all procurement been advertised according to ESIF rules?</h2>
           <fieldset class="inline">
             <legend class="visuallyhidden">Has all procurement been advertised according to ESIF rules?</legend>

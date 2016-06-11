@@ -4,6 +4,7 @@
 
   <main id="content" role="main">
     {% include "includes/phase_banner_alpha.html" %}
+    {% include "includes/page_errors.html" %}
     <div class="main-header">
         <h1 class="heading-large">
           <span class="heading-secondary">Step 3</span>
@@ -12,26 +13,27 @@
     </div>
     <div class="main-content">
       <form action="/project/key-dates">
-        <div class="form-group">
+        <div class="form-group"  data-required  data-field="textfield">
           <label class="form-label" for="project-name">Project name</label>
           <input type="text" class="form-control" id="project-name">
         </div>
-        <div class="form-group full">
-          <label for="project-summary" class="form-label">Project summary</label>
-
-          <span class="form-hint">Explain what the project will achieve, for example 'reduce youth unemployment by giving free after school coding classes for school students after school'.</span>
+        <div class="form-group full" data-required  data-field="textfield">
+          <label for="project-summary" class="form-label">
+            Project summary
+            <span class="form-hint">Explain what the project will achieve, for example 'reduce youth unemployment by giving free after school coding classes for school students after school'.</span>
+          </label>
           <textarea class="form-control" id="project-summary" cols="30" rows="10"></textarea>
         </div>
-        <div class="form-group full">
+        <div class="form-group full" data-required  data-field="textfield">
           <label for="project-benefit" class="form-label">Who will your project help?</label>
           <textarea class="form-control" id="project-benefit" cols="30" rows="10"></textarea>
         </div>
-        <div class="form-group full">
+        <div class="form-group full" data-required  data-field="textfield">
           <label for="project-located" class="form-label">Project location</label>
           <textarea class="form-control" id="project-located" cols="30" rows="10"></textarea>
         </div>
         <!-- sme? -->
-        <div class="form-group">
+        <div class="form-group" data-required  data-field="radio">
           <h2 class="form-label-bold">Does your project cover any Local Enterprise Partnership (LEP) areas?</h2>
           <fieldset class="inline">
             <legend class="visuallyhidden">Does your project cover an LEP?</legend>
@@ -50,8 +52,8 @@
           </fieldset>
         </div>
         <!-- sme? -->
-        <div class="form-group">
-          <h2 class="form-label-bold">Did the approval of your outline application include any conditions or recommendations?</h2>
+        <div class="form-group"  data-required  data-field="radio">
+          <h2 class="form-label-bold">Did the approval of your outline application contain any conditions or recommendations?</h2>
           <fieldset class="inline">
             <legend class="visuallyhidden">Did the approval of your outline application include any conditions or recommendations?</legend>
 

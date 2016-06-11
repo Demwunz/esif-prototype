@@ -4,6 +4,8 @@
 
   <main id="content" role="main">
     {% include "includes/phase_banner_alpha.html" %}
+    {% include 'includes/page_errors.html' %}
+
     <div class="main-header">
         <h1 class="heading-large">
           <span class="heading-secondary">Step 9</span>
@@ -38,15 +40,16 @@
       <p>If you believe that any information that we hold about you is inaccurate or incorrect, please tell us and we will correct it.</p>
 
       <form action="/declaration">
-        <fieldset>
-          <legend class="visually-hidden"></legend>
-          <div class="form-group">
-            <label for="confirm" class="block-label" data-target="example_confirm">
-              <input type="checkbox" name="confirm" value="Wales" id="confirm" aria-controls="confirm" aria-expanded="false">
-              I confirm that I have read and agree to the above information regarding the data protection act
-            </label>
-          </div>
-        </fieldset>
+        <div class="form-group chunky-checkbox" data-required data-field="checkbox" data-error="Must be checked" data-params='{"label": "h3", "fields": "input:checkbox", "validation": "checked"}'>
+          <h3 class="heading-small">Data protection act confirmation</h3>
+          <fieldset>
+            <legend class="visually-hidden">Data protection act confirmation</legend>
+              <label for="confirm" class="block-label" data-target="example_confirm">
+                <input type="checkbox" name="confirm" value="confirm" id="confirm" aria-controls="confirm" aria-expanded="false">
+                I confirm that I have read and agree to the above information regarding the data protection act
+              </label>
+          </fieldset>
+        </div>
         <!-- submit -->
         <div class="form-group inline submit-buttons">
           <button class="button" type="submit">Save and continue</button>

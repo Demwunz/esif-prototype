@@ -2,12 +2,14 @@
 
 <main id="content" role="main">
   {% include "includes/phase_banner_alpha.html" %}
+
   <div class="breadcrumbs">
     <ol>
       <li><a href="/dashboard">About your project</a></li>
       <li>Financial information</li>
     </ol>
   </div>
+  {% include "includes/page_errors.html" %}
   <div class="main-header">
     <h1 class="heading-xlarge">
       <span class="heading-secondary">Step 4</span>
@@ -16,12 +18,13 @@
     </h1>
   </div>
   <div class="main-content">
-    <form action="/financial/summary">
+    <form action="/financial/information">
       <fieldset>
         <legend>Add your project costs</legend>
-        <div class="form-group">
+        <div class="form-group" data-required data-field="select">
           <label for="cost-category" class="form-label">Cost category</label>
           <select name="cost-category" id="cost-category" class="form-control">
+            <option selected disabled>Choose a cost category</option>
             <option value="Building acquisition- Capital">Capital - Building acquisition</option>
             <option value="Building and construction- Capital">Capital - Building and construction</option>
             <option value="Equipment- Capital">Capital - Equipment</option>
@@ -40,7 +43,7 @@
             <option value="Salaries - Revenue">Revenue - Salaries</option>
           </select>
         </div>
-        <div class="form-group full">
+        <div class="form-group full" data-required data-field="textfield">
           <label for="costs-value" class="form-label">Value</label>
           <input type="text" class="form-control" id="costs-value">
         </div>
@@ -48,9 +51,10 @@
 
       <fieldset>
         <legend>Funding source</legend>
-        <div class="form-group">
+        <div class="form-group" data-required data-field="select">
           <label for="funding-source" class="form-label">Cost category</label>
           <select name="funding-source" id="cost-category" class="form-control">
+            <option selected disabled>Choose a cost category</option>
             <option value="Building acquisition- Capital">Capital - Building acquisition</option>
             <option value="Building and construction- Capital">Capital - Building and construction</option>
             <option value="Equipment- Capital">Capital - Equipment</option>
@@ -69,11 +73,11 @@
             <option value="Salaries - Revenue">Revenue - Salaries</option>
           </select>
         </div>
-        <div class="form-group full">
+        <div class="form-group full" data-required data-field="textfield">
           <label for="funding-source-name" class="form-label">Name of funding source</label>
           <input type="text" class="form-control" id="funding-source-name">
         </div>
-        <div class="form-group">
+        <div class="form-group" data-required data-field="radio">
           <h2 class="form-label-bold">Type of funding</h2>
           <fieldset class="inline">
             <legend class="visuallyhidden">Type of funding</legend>
@@ -114,7 +118,7 @@
             06 - Coventry and Warwickshire
           </label>
         </div>
-        <div class="form-group">
+        <div class="form-group" data-required data-field="radio">
           <h2 class="form-label-bold">Region category</h2>
           <fieldset class="inline">
             <legend class="visuallyhidden">Region category</legend>

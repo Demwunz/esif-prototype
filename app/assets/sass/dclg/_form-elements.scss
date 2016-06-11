@@ -23,6 +23,9 @@ fieldset{
   &:first-child{
     padding-top:0;
   }
+  &.inline {
+    padding-top:0;
+  }
 }
 .main-content .form-group {
   .form-control{
@@ -36,11 +39,31 @@ fieldset{
   textarea.form-control{
     width:95%;
   }
+
+  &.form-date.error {
+    padding-top:0;
+    h3 {
+      margin-top:0;
+    }
+    .form-hint{
+      margin-bottom:10px;
+    }
+  }
 }
 .repeat {
   .form-group {
     legend.heading-small {
       margin-top:0;
     }
+  }
+}
+.chunky-checkbox {
+  &.error {
+    h3{
+      margin-top:0;
+    }
+  }
+  fieldset {
+    padding-top:0;
   }
 }

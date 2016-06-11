@@ -2,12 +2,14 @@
 
 <main id="content" role="main">
   {% include "includes/phase_banner_alpha.html" %}
+
   <div class="breadcrumbs">
     <ol>
       <li><a href="/dashboard">About your project</a></li>
       <li>Financial information</li>
     </ol>
   </div>
+  {% include 'includes/page_errors.html' %}
   <div class="main-header">
     <h1 class="heading-xlarge">
       <span class="heading-secondary">Step 4</span>
@@ -17,15 +19,15 @@
   </div>
   <div class="main-content">
     <form action="/financial/costs">
-      <div class="form-group full">
+      <div class="form-group full" data-required data-field="textfield">
         <label for="budget-spent" class="form-label">How will the project budget be spent?</label>
         <textarea class="form-control" id="budget-spent" cols="30" rows="10"></textarea>
       </div>
-      <div class="form-group full">
+      <div class="form-group full" data-required data-field="textfield">
         <label for="accurate-estimate" class="form-label">How accurate is your cost estimate?</label>
         <textarea class="form-control" id="accurate-estimate" cols="30" rows="10"></textarea>
       </div>
-      <div class="form-group">
+      <div class="form-group" data-required data-field="radio">
         <h2 class="form-label-bold">Will the project reclaim irrecoverable VAT?</h2>
         <fieldset class="inline">
           <legend class="visuallyhidden">Will the project reclaim irrecoverable VAT?</legend>
@@ -42,11 +44,11 @@
         </fieldset>
       </div>
 
-      <div class="form-group full">
+      <div class="form-group full" data-required data-field="textfield">
         <label for="match-funding" class="form-label">Who is providing match funding for the project?</label>
         <textarea class="form-control" id="match-funding" cols="30" rows="10"></textarea>
       </div>
-      <div class="form-group">
+      <div class="form-group" data-required data-field="radio">
         <h2 class="form-label-bold">Is match funding confirmed?</h2>
         <fieldset class="inline">
           <legend class="visuallyhidden">Is match funding confirmed?</legend>
@@ -62,7 +64,7 @@
           </label>
         </fieldset>
       </div>
-      <div class="form-group">
+      <div class="form-group" data-required data-field="radio">
         <h2 class="form-label-bold">Do you expect the project to generate income?</h2>
         <fieldset class="inline">
           <legend class="visuallyhidden">Do you expect the project to generate income?</legend>
