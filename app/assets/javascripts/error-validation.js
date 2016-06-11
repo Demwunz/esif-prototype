@@ -45,13 +45,17 @@ app.getFields = function() {
 
 app.checkFields = function(formgroup, params, i) {
   //valid is a string: - 0 means no value, anything else means user entered some info
-  var valid = app.validateField(formgroup, params);
+  var valid = app.validateField(formgroup, params),
+    has_errors = formgroup.hasClass('error');
 
   if(valid) {
     app.resetFieldErrors(formgroup, params, i);
-  } else {
+  } else if(!valid && !has_errors) {
     app.setFieldErrors(formgroup, params, i);
+  } else {
+    $('.error-summary').show().focus();
   }
+
   return valid;
 };
 
@@ -100,19 +104,17 @@ app.setFieldErrors = function(formgroup, params, i) {
   var already_errored = formgroup.hasClass('error'),
     field = formgroup.find(params.fields),
     label = formgroup.find(params.label),
-    field_id = field[0].id;
-  if(!already_errored) {
-    var error_summary_list = $('.error-summary').show().focus().find('ul'),
-      li = $('<li id="error-message-' + i + '"><a href="#' + field_id + '">' + label.text() +  ' ' + params.error.toLowerCase() + '</a></li>');
+    field_id = field[0].id,
+    error_summary_list = $('.error-summary').show().focus().find('ul'),
+    li = $('<li id="error-message-' + i + '"><a href="#' + field_id + '">' + label.text() +  ' ' + params.error.toLowerCase() + '</a></li>');
 
-    formgroup.addClass('error');
+  formgroup.addClass('error');
 
-    error_summary_list.append(li);
+  error_summary_list.append(li);
 
-    label
-      .addClass('form-label-bold')
-      .append('<span class="error-message">' + params.error + '</span>');
-  }
+  label
+    .addClass('form-label-bold')
+    .append('<span class="error-message">' + params.error + '</span>');
 };
 
 (function() {
