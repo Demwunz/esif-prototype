@@ -1,7 +1,7 @@
-var v = window.v || {};
+var app = window.app || {};
 // v is an abbreviation of "validate"
 
-v.defaults = {
+app.defaults = {
   select: {
     fields: 'select',
     label: 'label',
@@ -29,40 +29,45 @@ v.defaults = {
   }
 };
 
-v.getFields = function() {
-  var formgroups = $('[data-required]');
+app.getFields = function() {
+  var formgroups = $('[data-required]'),
+    valid = 0;
 
   formgroups.each(function(i, el) {
     var formgroup = $(el),
-      params = v.setParams(formgroup);
+      params = app.setParams(formgroup),
+      value = app.checkFields(formgroup, params, i);
 
-    v.setField(formgroup, params);
+    valid = Math.abs(valid + value);
   });
+  return formgroups.length === valid;
 };
 
-v.setField = function(formgroup, params) {
-  var valid = v.validateField(formgroup, params);
+app.checkFields = function(formgroup, params, i) {
+  //valid is a string: - 0 means no value, anything else means user entered some info
+  var valid = app.validateField(formgroup, params);
 
   if(valid) {
-    v.resetFieldErrors(formgroup, params);
+    app.resetFieldErrors(formgroup, params, i);
   } else {
-    v.setFieldErrors(formgroup, params);
+    app.setFieldErrors(formgroup, params, i);
   }
+  return valid;
 };
 
-v.resetFieldErrors = function(formgroup, params) {
+app.resetFieldErrors = function(formgroup, params, i) {
+  $('#error-message-' + i).remove();
   formgroup
     .find(params.label)
     .removeClass('form-label-bold');
   formgroup
     .removeClass('error')
-    .data('invalid', false)
     .find('.error-message')
     .remove();
 };
 
-v.setParams = function(formgroup) {
-  var params = v.defaults[formgroup.data('field')],
+app.setParams = function(formgroup) {
+  var params = app.defaults[formgroup.data('field')],
     customParams = (function customParams() {
       var custom_params = formgroup.data('params');
       if (custom_params) {
@@ -70,46 +75,50 @@ v.setParams = function(formgroup) {
           params[key] = val;
         });
       }
+
     })();
     return params;
 };
 
-v.validateField = function(formgroup, params){
+app.validateField = function(formgroup, params){
   var valid,
     field = formgroup.find(params.fields);
 
   if (params.fields === 'select') {
-    valid = field[0].selectedIndex;
+    valid = field[0].selectedIndex > 0 ? 1 : 0;
   } else if(params.fields === 'input:radio' || params.fields === 'input:checkbox'){
     valid = field.filter(function(i, el) {
       return $(el).is(':checked');
     }).length;
   } else {
-    valid = field.val();
+    valid = field.val().length > 0 ? 1 : 0;
   }
   return valid;
 };
 
-v.setFieldErrors = function(formgroup, params) {
-  var field = formgroup.find(params.fields),
+app.setFieldErrors = function(formgroup, params, i) {
+  var already_errored = formgroup.hasClass('error'),
+    field = formgroup.find(params.fields),
     label = formgroup.find(params.label),
-    field_id = field[0].id,
-    error_summary_list = $('.error-summary').show().find('ul');
+    field_id = field[0].id;
+  if(!already_errored) {
+    var error_summary_list = $('.error-summary').show().focus().find('ul'),
+      li = $('<li id="error-message-' + i + '"><a href="#' + field_id + '">' + label.text() +  ' ' + params.error.toLowerCase() + '</a></li>');
 
-  formgroup.addClass('error').data('invalid', true);
+    formgroup.addClass('error');
 
-  error_summary_list
-    .append('<li><a href="#' + field_id + '">' + label.text() +  ' ' + params.error.toLowerCase() + '</a></li>');
+    error_summary_list.append(li);
 
-  label
-    .addClass('form-label-bold')
-    .append('<span class="visually-hidden">:</span><span class="error-message">' + params.error + '</span>');
+    label
+      .addClass('form-label-bold')
+      .append('<span class="error-message">' + params.error + '</span>');
+  }
 };
 
 (function() {
   'use strict';
   $('form').on('submit', function(event) {
-    v.getFields();
+    var valid = app.getFields();
     return false;
   });
 })();

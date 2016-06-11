@@ -4,6 +4,8 @@
 
   <main id="content" role="main">
     {% include "includes/phase_banner_alpha.html" %}
+    {% include 'includes/page_errors.html' %}
+
     <div class="main-header">
         <h1 class="heading-large">
           <span class="heading-secondary">Step 9</span>
@@ -38,7 +40,7 @@
       <p>If you believe that any information that we hold about you is inaccurate or incorrect, please tell us and we will correct it.</p>
 
       <form action="/declaration">
-        <div class="form-group chunky-checkbox" data-required data-field="checkbox" data-error="Must be checked" data-params='{"label": "h3", "fields": ":checkbox", "validation": "checked"}'>
+        <div class="form-group chunky-checkbox" data-required data-field="checkbox" data-error="Must be checked" data-params='{"label": "h3", "fields": "input:checkbox", "validation": "checked"}'>
           <h3 class="heading-small">Data protection act confirmation</h3>
           <fieldset>
             <legend class="visually-hidden">Data protection act confirmation</legend>

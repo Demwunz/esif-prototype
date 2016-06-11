@@ -8,6 +8,7 @@
       <li>Key dates</li>
     </ol>
   </div>
+  {% include 'includes/page_errors.html' %}
   <div class="main-header">
     <h1 class="heading-xlarge">
       <span class="heading-secondary">Step 4</span>
@@ -31,12 +32,12 @@
           <legend class="visuallyhidden">Does the project align with the growth priorities of the local ESIF strategy?</legend>
 
           <label for="local-yes" class="block-label">
-            <input type="radio" name="sme" value="Yes" id="local-yes">
+            <input type="radio" name="esif-strategy" value="Yes" id="local-yes">
             Yes
           </label>
 
           <label for="local-no" class="block-label">
-            <input type="radio" name="sme" value="No" id="local-no">
+            <input type="radio" name="esif-strategy" value="No" id="local-no">
             No
           </label>
         </fieldset>
@@ -48,12 +49,12 @@
           <legend class="visuallyhidden">Will the project have environmental benefits?</legend>
 
           <label for="benefits-yes" class="block-label">
-            <input type="radio" name="sme" value="Yes" id="benefits-yes">
+            <input type="radio" name="environmental-benefits" value="Yes" id="benefits-yes">
             Yes
           </label>
 
           <label for="benefits-no" class="block-label">
-            <input type="radio" name="sme" value="No" id="benefits-no">
+            <input type="radio" name="environmental-benefits" value="No" id="benefits-no">
             No
           </label>
         </fieldset>

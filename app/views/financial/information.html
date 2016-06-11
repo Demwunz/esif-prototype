@@ -2,12 +2,14 @@
 
 <main id="content" role="main">
   {% include "includes/phase_banner_alpha.html" %}
+
   <div class="breadcrumbs">
     <ol>
       <li><a href="/dashboard">About your project</a></li>
       <li>Financial information</li>
     </ol>
   </div>
+  {% include 'includes/page_errors.html' %}
   <div class="main-header">
     <h1 class="heading-xlarge">
       <span class="heading-secondary">Step 5</span>
@@ -16,7 +18,7 @@
     </h1>
   </div>
   <div class="main-content">
-    <form action="/financial/costs">
+    <form action="/financial/summary">
 
       <div class="form-group full" data-required data-field="textfield">
         <label for="managed-authorised" class="form-label">How will ESIF payments be managed and authorised?</label>

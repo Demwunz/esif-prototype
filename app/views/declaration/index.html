@@ -4,6 +4,8 @@
 
   <main id="content" role="main">
     {% include "includes/phase_banner_alpha.html" %}
+    {% include 'includes/page_errors.html' %}
+
     <div class="main-header">
         <h1 class="heading-large">
           <span class="heading-secondary">Step 9</span>
@@ -12,11 +14,10 @@
     </div>
     <div class="main-content">
       <form action="/full-application">
-        <div class="form-group">
+        <div class="form-group" data-required data-field="radio">
           <h2 class="form-label">Can all the information in this application be shared with the Local Enterprise Partner committee?</h2>
           <fieldset class="inline">
             <legend class="visuallyhidden">Can all the information in this application be shared with the Local Enterprise Partner committee?</legend>
-
             <label for="partner-committee-yes" class="block-label">
               <input type="radio" name="partner-committee" value="Yes" id="partner-committee-yes">
               Yes
