@@ -19,25 +19,49 @@
     <form action="/financial/costs">
       <div class="form-group full">
         <label for="budget-spent" class="form-label">How will the project budget be spent?</label>
-          <span class="form-hint">Give a breakdown of all costs for your project, eg 'room hire for 2 months - £16,000', 'equipment hire, projector, one week - £200'.</span>
+          <span class="form-hint">
+            <p>Give a breakdown of all costs for your project, eg:</p>
+            <ul>
+              <li>'room hire for 2 months - £16,000'</li>
+              <li>'equipment hire, projector, one week - £200'</li>
+            </ul>
+          </span>
         <textarea class="form-control" id="budget-spent" cols="30" rows="10"></textarea>
       </div>
       <div class="form-group full">
         <label for="accurate-estimate" class="form-label">How accurate is your cost estimate?</label>
-        <span class="form-hint">Answer 'accurate' for any costs that have been quoted by a supplier. Answer 'estimate' for any costs that are estimates or may change.</span>
+        <span class="form-hint">
+          <p>Answer:<p>
+          <ul>
+            <li>'accurate' for any costs that have been quoted by a supplier
+              <li>'estimate' for any costs that may change</li>
+            </ul>
+
+              </span>
         <textarea class="form-control" id="accurate-estimate" cols="30" rows="10"></textarea>
       </div>
       <div class="form-group">
         <h2 class="form-label-bold">Will the project reclaim irrecoverable VAT?</h2>
 
-<span class="form-hint">Irrecoverable Value-Added Tax (VAT) is VAT that can’t be claimed back.
-You can’t reclaim VAT for:
-•	anything that’s only for private use
-•	goods and services your business uses to make VAT-exempt supplies
-•	business entertainment costs
-•	anything you’ve bought from other EU countries (you may be able to reclaim VAT charged under the electronic cross-border refund system)
-•	goods sold to you under one of the VAT second-hand margin schemes
-•	business assets that are transferred to you as a going concern
+<span class="form-hint">
+<p>Irrecoverable Value-Added Tax (VAT) is VAT that can’t be claimed back.</p>
+<p>You can’t reclaim VAT for:</p>
+  <ul>
+<li>anything that’s only for private use</li>
+<li>goods and services your business uses to make VAT-exempt supplies</li>
+<li>business entertainment costs</li>
+<li>anything you’ve bought from other EU countries (you may be able to reclaim VAT charged under the electronic cross-border refund system)</li>
+<li>goods sold to you under one of the VAT second-hand margin schemes</li>
+<li>business assets that are transferred to you as a going concern</li>
+</ul>
+
+<p>Irrecoverable VAT can sometimes be reclaimed.</p>
+<p>Exemptions include:</p>
+<ul>
+  <li>List exemption 1 (Martin to explain)</li>
+    <li>List exemption 2  (Martin to explain)</li>
+      <li>List exemption 3  (Martin to explain)</li>
+</ul>
   </span>
 
 
@@ -58,10 +82,21 @@ You can’t reclaim VAT for:
 
       <div class="form-group full">
         <label for="match-funding" class="form-label">Who is providing match funding for the project?</label>
+
+        <span class="form-hint">
+'Match funding' is where a person or organization agrees to match any funds raised independently by a Fundraiser.
+
+For example: if the Fundraiser raises £500 for a new sign, the match-funder will also contribute £500. The Fundraiser ends up with £1000.
+</span>
+
         <textarea class="form-control" id="match-funding" cols="30" rows="10"></textarea>
       </div>
       <div class="form-group">
         <h2 class="form-label-bold">Is match funding confirmed?</h2>
+
+        <span class="form-hint">
+Match funding is confirmed where the sponsor agrees to match any funds raised by the fundraiser.
+</span>
         <fieldset class="inline">
           <legend class="visuallyhidden">Is match funding confirmed?</legend>
 
@@ -78,8 +113,10 @@ You can’t reclaim VAT for:
       </div>
       <div class="form-group">
         <h2 class="form-label-bold">Do you expect the project to generate income?</h2>
+
         <fieldset class="inline">
           <legend class="visuallyhidden">Do you expect the project to generate income?</legend>
+<span class="form-hint">If 'yes', give an estimated income.</span>
 
           <label for="generate-income-yes" class="block-label">
             <input type="radio" name="generate-income" value="Yes" id="generate-income-yes">
