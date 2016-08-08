@@ -1,0 +1,62 @@
+{% extends "layout.html" %} {% block page_title %} Apply for European Structural and Investment Funding {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="/dashboard">Home</a></li>
+      <li>Call list</li>
+    </ol>
+  </div>
+  <div class="main-header">
+    <h1 class="heading-medium">
+      Start a new application
+    </h1>
+    <p>
+      @nicolette: copy from <a href="https://notableapp.com/posts/120326">https://notableapp.com/posts/1203261</a> needs to go here
+    </p>
+  </div>
+  <div class="main-content">
+
+  </div>
+  <div class="table-paginated">
+    <table>
+      <caption class="heading-medium">Call list</caption>
+      <thead>
+        <tr>
+          <th scope="col">Call Name</th>
+          <th scope="col" class="numeric">Reference Number</th>
+          <th scope="col" class="numeric">Close Date</th>
+          <th class="empty" colspan="2">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Clifton CA claim - Test call</td>
+          <td class="numeric">OC1R16P00B</td>
+          <td class="numeric">14/04/2017</td>
+          <td><a href="#">View details</a></td>
+          <td><a href="#">Apply now</a></td>
+        </tr>
+        <tr>
+          <td>Adri call full ERDF Test Call</td>
+          <td class="numeric">OC1R16P011C</td>
+          <td class="numeric">27/02/2017</td>
+          <td><a href="#">View details</a></td>
+          <td><a href="#">Apply now</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- pagination only needs to appear when there are multiple pages -->
+    <!--div class="table-pagination">
+      <ul>
+        <li><a href="#">Previous</a></li>
+        <li><a href="#">Next</a></li>
+      </ul>
+    </div-->
+    <!-- /pagination -->
+  </div>
+</main>
+
+{% endblock %}
