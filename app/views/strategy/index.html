@@ -19,15 +19,33 @@
   <div class="main-content">
     <form action="/strategy/funding">
       <div class="form-group full" data-required data-field="textfield">
-        <label for="strategy-criteria" class="form-label">How does the project meet the call criteria?</label>
+        <label for="strategy-criteria" class="form-label">How does your project meet the call criteria?</label>
+        <span class="form-hint">Each ESIF grant has a problem it wants to solve (eg 'reduce unemployment'). You can find details about the problem in the Details section of your Call Specification document. Using the Details, explain how your project will help to solve that problem.
+        </span>
         <textarea class="form-control" id="strategy-criteria" cols="30" rows="10"></textarea>
       </div>
       <div class="form-group full" data-required data-field="textfield">
         <label for="strategy-objectives" class="form-label">How does the project deliver the programme's objectives?</label>
+
+<span class="form-hint">
+<p>By ‘programme objectives’, we mean:</p>
+<ul>
+<li>what does your programme do?</li>
+<li>why does it do this?</li>
+<li>how does this help the government to achieve an aim?</li>
+</ul>
+ </span>
+
         <textarea class="form-control" id="strategy-objectives" cols="30" rows="10"></textarea>
       </div>
       <div class="form-group" data-required data-field="radio">
         <h2 class="form-label-bold">Does the project align with the growth priorities of the local ESIF strategy?</h2>
+
+    <span class="form-hint">
+You can
+<a href="https://www.gov.uk/european-structural-investment-funds"> read the list of growth priorities on GOV.UK</a>.
+</span>
+
         <fieldset class="inline">
           <legend class="visuallyhidden">Does the project align with the growth priorities of the local ESIF strategy?</legend>
 
@@ -64,7 +82,14 @@
         <label for="ensure-equality">
           How do you plan to ensure equality across the project?
           <span class="form-hint">
-            Include issues of sex, gender, race and religion if appropriate.
+
+
+<span class="form-hint">
+You can
+<a href="https://www.gov.uk/employer-preventing-discrimination">read about preventing discrimination on GOV.UK</a>. Once you have read this advice, you can write what actions you will take.
+</span>
+
+
           </span>
         </label>
         <textarea class="form-control" id="ensure-equality" cols="30" rows="10"></textarea>

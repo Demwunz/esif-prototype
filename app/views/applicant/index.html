@@ -21,15 +21,18 @@
             <input type="text" class="form-control" id="organisation-name">
           </div>
           <!-- organisation type -->
-          <div class="form-group" data-required  data-field="textfield">
+          <div class="form-group">
             <label class="form-label" for="organisation-type">Organisation type</label>
+              <span class="form-hint">Eligible organisations: charity, local authorities; statutory and non-statutory public funded organisations/bodies, higher and Further Education Institutions, voluntary/community organisations, private sector companies, registered charities, not for profit organisation.</span>
             <input type="text" class="form-control" id="organisation-type">
           </div>
           <!-- sme? -->
-          <div class="form-group" data-required  data-field="radio">
-            <h2 class="form-label">Is this a small or medium-sized enterprise (1 to 249 employees)?</h2>
+          <div class="form-group">
+            <h2 class="form-label-bold">Is this a small or medium-sized organisation?</h2>
+        <span class="form-hint">A small or medium-sized organisation is one with 1 to 249 employees.</span>
+
             <fieldset class="inline">
-              <legend class="visuallyhidden">Is this a small or medium-sized enterprise (1 to 249 employees)?</legend>
+              <legend class="visuallyhidden">Is this a small or medium-sized organisation (1 to 249 employees)?</legend>
 
               <label for="sme-yes" class="block-label">
                 <input type="radio" name="sme" value="Yes" id="sme-yes">
@@ -57,10 +60,10 @@
             <input type="text" class="form-control" id="vat-number">
           </div>
           <!-- sme? -->
-          <div class="form-group" data-required  data-field="radio">
-            <h2 class="form-label-bold">Has this organisation previously worked on a project funded through European Social Fund (ESF), European Regional Development Fund (ERDF) or European Agricultural Fund for Rural Development (EAFRD)?</h2>
+          <div class="form-group">
+            <h2 class="form-label-bold">Has your organisation received funding from the european structural and investment funds (ESIF) programme before?</h2>
             <fieldset class="inline">
-              <legend class="visuallyhidden">Has this organisation previously worked on a project funded through ESF, ERDF or EAFRD?</legend>
+              <legend class="visuallyhidden">Has your organisation received funding from the european structural and investment funds (ESIF) programme before?</legend>
 
               <label for="previous-project-yes" class="block-label">
                 <input type="radio" name="previous-project" value="Yes" id="previous-project-yes">

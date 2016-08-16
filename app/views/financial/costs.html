@@ -14,7 +14,7 @@
     <h1 class="heading-xlarge">
       <span class="heading-secondary">Step 4</span>
       <span class="visually-hidden">:</span>
-      Financial information - Costs
+      Financial information: Costs
     </h1>
   </div>
   <div class="main-content">
@@ -23,6 +23,7 @@
         <legend>Add your project costs</legend>
         <div class="form-group" data-required data-field="select">
           <label for="cost-category" class="form-label">Cost category</label>
+
           <select name="cost-category" id="cost-category" class="form-control">
             <option selected disabled>Choose a cost category</option>
             <option value="Building acquisition- Capital">Capital - Building acquisition</option>
@@ -51,7 +52,8 @@
 
       <fieldset>
         <legend>Funding source</legend>
-        <div class="form-group" data-required data-field="select">
+          <span class="form-hint">Explain how the project is funded.</span>
+        <div class="form-group" data-required data-field="select"
           <label for="funding-source" class="form-label">Cost category</label>
           <select name="funding-source" id="cost-category" class="form-control">
             <option selected disabled>Choose a cost category</option>
@@ -99,6 +101,19 @@
         <legend>Where funding will be allocated</legend>
         <div class="form-group">
           <h3 class="form-label">Priority axis</h3>
+          <span class="form-hint"><p>A priority axis is an aim the government has to fix a problem. </p>
+            <ul>
+            <li>For example, one priority axis is to reduce youth unemployment.</li>
+            <li>We publish the priorities on GOV.UK, explaining why they are important.</li>
+            <li>We review and change the priorities regularly to make sure the most urgent problems are solved.</li>
+            <li>Charities, local government and businesses design programmes to solve these problems.</li>
+            <li><ul>We look at how the programmes perform to find out: </ul>
+              <li>what has been successful (so we can repeat that success for other priorities)</li>
+              <li>what problems have been solved (so we can adjust the priority axis)</p>
+            <li>You can read about priority axes [INSERT LINK TO INFO] on GOV.UK</li>
+            <li>Tell us which axis your programme will target.</li>
+             </ul>
+           </span>
           <label for="priority-axis" class="block-label">
             <input type="checkbox" name="priority-axis" value="PAR" id="priority-axis">
             PAR
@@ -106,6 +121,13 @@
         </div>
         <div class="form-group">
           <h3 class="form-label">Investment priority</h3>
+            <span class="form-hint">
+              <p>Priority axes are grouped into subjects, for example 'reduce youth unemployment'.</p>
+              <p>In the priority axis for reducing youth unemployment, there are different investment priorities.</p>
+              <p>These investment priorities take a closer look at the axis and target specific problems.</p>
+              <p>You can find your investment priority on the GOV.UK priority axis list [INSERT LINK]. </p>
+           </span>
+
           <label for="investment-priority" class="block-label">
             <input type="checkbox" name="investment-priority" value="IP1" id="investment-priority">
             IP1 - IP1
@@ -113,15 +135,30 @@
         </div>
         <div class="form-group">
           <h3 class="form-label">LEP area</h3>
+          <span class="form-hint">Local enterprise partnerships (LEP) are partnerships between local authorities and businesses. These partnerships work together to create a list of priorities to grow the local economy and create jobs in that area.
+</span>
+
+
+
+
           <label for="lep-area" class="block-label">
             <input type="checkbox" name="lep-area" value="06 - Coventry and Warwickshire" id="lep-area">
             06 - Coventry and Warwickshire
           </label>
+
+
         </div>
         <div class="form-group" data-required data-field="radio">
           <h2 class="form-label-bold">Region category</h2>
           <fieldset class="inline">
             <legend class="visuallyhidden">Region category</legend>
+ <span class="form-hint">
+
+Local enterprise partnerships (LEP) are partnerships between local authorities and businesses. These partnerships work together to create a list of priorities to grow the local economy and create jobs in that area.
+
+<a href="https://www.gov.uk/government/publications/2010-to-2015-government-policy-local-enterprise-partnerships-leps-and-enterprise-zones/2010-to-2015-government-policy-local-enterprise-partnerships-leps-and-enterprise-zones">Read about LEPs (GOV.UK).</a>
+
+</span>
 
             <label for="region-more" class="block-label">
               <input type="radio" name="region" value="More Developed" id="region-more">
