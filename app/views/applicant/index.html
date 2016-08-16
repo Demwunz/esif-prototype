@@ -4,6 +4,7 @@
 
   <main id="content" role="main">
     {% include "includes/phase_banner_alpha.html" %}
+    {% include 'includes/page_errors.html' %}
     <div class="main-header">
         <h1 class="heading-large">
           <span class="heading-secondary">Step 1</span>
@@ -15,7 +16,7 @@
         <fieldset>
           <legend class="visually-hidden">About your organisation</legend>
           <!-- organisation name -->
-          <div class="form-group">
+          <div class="form-group" data-required  data-field="textfield">
             <label class="form-label" for="organisation-name">Organisation name</label>
             <input type="text" class="form-control" id="organisation-name">
           </div>
@@ -45,8 +46,8 @@
             </fieldset>
           </div>
           <!-- company or charity number-->
-          <div class="form-group">
-            <label class="form-label" for="company-charity-number">Registration number</label>
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="company-charity-number">Company or charity registration number</label>
             <span class="form-hint">If you aren't a company or charity, skip this question</span>
             <input type="text" class="form-control" id="company-charity-number">
           </div>
@@ -75,6 +76,7 @@
               </label>
             </fieldset>
           </div>
+
           <div class="form-group inline submit-buttons">
             <button class="button" type="submit">Save and continue</button>
             <button class="button-hyperlink">Save and quit</button>

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="main-header">
+        <h1 class="heading-large">Privacy policy</h1>
+    </div>
+    <div class="main-content">
+      <p>Any information in your application will be treated confidentially and will only be released if legally required, eg due to a Freedom of Information request.</p>
+      <p>If you think any sensitive information in your application shouldn't be disclosed then you must contact <a href="https://www.gov.uk/government/organisations/department-for-communities-and-local-government" rel="external">Department for Communities and Local Government (DCLG)</a> or <a href="https://www.gov.uk/government/organisations/department-for-work-pensions" rel="external">Department for Work and Pensions (DWP)</a> explaining what information you think is sensitive and why.</p>
+      <h2 class="heading-medium">Use of your personal information</h2>
+      <p>DCLG and DWP may:</p>
+      <ul class="list list-bullet">
+        <li>publish information about your application on their websites</li>
+        <li>share information with relevant agencies for the purposes of fraud prevention</li>
+        <li>share anonymised data with third parties to allow statistical analysis and reporting</li>
+      </ul>
+      <p>Your information may also be used in internal and external reviews of departmental policies and procedures.</p>
+      <h2 class="heading-medium">Data retention</h2>
+      <p>Your information will be held for 3 years after the programme has closed (currently expected to be 2032).</p>
+      <p>Your information could be held for longer if there's a legitimate reason to do so, for example:</p>
+      <ul class="list list-bullet">
+        <li>there are legal proceedings concerning your application</li>
+        <li>it's required by law or a regulatory body</li>
+      </ul>
+      <p>If you think that any personal information held about you is wrong then contact <a href="https://www.gov.uk/government/organisations/department-for-communities-and-local-government" rel="external">DCLG</a> or <a href="https://www.gov.uk/government/organisations/department-for-work-pensions" rel=external>DWP</a> to have it corrected.</p>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

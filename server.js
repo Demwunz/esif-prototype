@@ -1,11 +1,13 @@
 var path = require('path'),
     express = require('express'),
+    session = require('express-session'),
     nunjucks = require('express-nunjucks'),
     routes = require(__dirname + '/app/routes.js'),
     favicon = require('serve-favicon'),
     app = express(),
     basicAuth = require('basic-auth'),
     bodyParser = require('body-parser'),
+    browserSync = require('browser-sync'),
     config = require(__dirname + '/app/config.js'),
     port = (process.env.PORT || config.port),
     utils = require(__dirname + '/lib/utils.js'),
@@ -39,6 +41,17 @@ nunjucks.setup({
   noCache: true
 }, app);
 
+// require core and custom filters, merges to one object
+// and then add the methods to nunjucks env obj
+nunjucks.ready(function(nj) {
+  var coreFilters = require(__dirname + '/lib/core_filters.js')(nj),
+    customFilters = require(__dirname + '/app/filters.js')(nj),
+    filters = Object.assign(coreFilters, customFilters);
+  Object.keys(filters).forEach(function(filterName) {
+    nj.addFilter(filterName, filters[filterName]);
+  });
+});
+
 // Middleware to serve static assets
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/public', express.static(__dirname + '/govuk_modules/govuk_template/assets'));
@@ -52,6 +65,13 @@ app.use(favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets'
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
+}));
+
+// Support session data
+app.use(session({
+  resave: false,
+  saveUninitialized: false,
+  secret: Math.round(Math.random()*100000).toString()
 }));
 
 // send assetPath to all views
@@ -130,4 +150,23 @@ console.log("\nGOV.UK Prototype kit v" + releaseVersion);
 console.log("\nNOTICE: the kit is for building prototypes, do not use it for production services.");
 
 // start the app
-utils.findAvailablePort(app);
+utils.findAvailablePort(app, function(port) {
+  console.log('Listening on port ' + port + '   url: http://localhost:' + port);
+  if (env === 'production') {
+    app.listen(port);
+  } else {
+    app.listen(port-50,function()
+    {
+      browserSync({
+        proxy:'localhost:'+(port-50),
+        port:port,
+        ui:false,
+        files:['public/**/*.*','app/views/**/*.*'],
+        ghostmode:false,
+        open:false,
+        notify:false,
+        logLevel: "error"
+      });
+    });
+  }
+});
