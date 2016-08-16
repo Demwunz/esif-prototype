@@ -1,8 +1,7 @@
 var ESIF = ESIF || {};
 
 ESIF.totals = {
-  var table = $('.table-totals');
-  
+  table : $('.table-totals')
 };
 
 (function init(){
