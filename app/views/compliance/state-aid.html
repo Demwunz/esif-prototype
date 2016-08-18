@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    {% include 'includes/page_errors.html' %}
+    
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Step 8</span>
+          Compliance - state aid
+        </h1>
+    </div>
+    <div class="main-content">
+      <p>Before answering this section you should be familiar with the <a href="https://www.gov.uk/government/publications/european-structural-and-investment-funds-programme-guidance" rel="external">rules on procurement</a> for projects applying for European Structural and Investment funds (ESIF).</p>
+      <form action="/data-protection">
+        <div class="form-group full" data-required data-field="textfield">
+          <label for="systems" class="form-label">What systems will you have to manage any State Aid requirements?</label>
+          <textarea class="form-control" id="systems" rows="10"></textarea>
+        </div>
+        <div class="form-group full" data-required data-field="textfield">
+          <label for="organisations" class="form-label">List any organisations you know of that may receive payments from the project</label>
+          <textarea class="form-control" id="organisations" rows="10"></textarea>
+        </div>
+        <div class="form-group" data-required data-field="radio">
+          <h2 class="form-label">Are payments to these organisations and your delivery partners allowed under State Aid regulations?</h2>
+          <fieldset class="inline">
+            <legend class="visuallyhidden">Are payments to these organisations and your delivery partners allowed under State Aid regulations?</legend>
+
+            <label for="partners-allowed-yes" class="block-label">
+              <input type="radio" name="partners-allowed" value="Yes" id="partners-allowed-yes">
+              Yes
+            </label>
+
+            <label for="partners-allowed-no" class="block-label">
+              <input type="radio" name="partners-allowed" value="No" id="partners-allowed-no">
+              No
+            </label>
+          </fieldset>
+        </div>
+        <div class="form-group" data-required data-field="radio">
+          <h2 class="form-label">Do all organisations that could receive payments meet the State Aid test?</h2>
+          <fieldset class="inline">
+            <legend class="visuallyhidden">Do all organisations that could receive payments meet the State Aid test?</legend>
+
+            <label for="test-yes" class="block-label">
+              <input type="radio" name="test" value="Yes" id="test-yes">
+              Yes
+            </label>
+
+            <label for="test-no" class="block-label">
+              <input type="radio" name="test" value="No" id="test-no">
+              No
+            </label>
+          </fieldset>
+        </div>
+        <!-- submit -->
+        <div class="form-group inline submit-buttons">
+          <button class="button" type="submit">Save and continue</button>
+          <button class="button-hyperlink">Save and quit</button>
+        </div>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

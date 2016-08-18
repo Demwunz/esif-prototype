@@ -2,6 +2,7 @@
 
 <main id="content" role="main">
   {% include "includes/phase_banner_alpha.html" %}
+
   <div class="breadcrumbs">
     <ol>
       <li><a href="/dashboard">About your project</a></li>
@@ -9,6 +10,7 @@
       <li>Financial information</li>
     </ol>
   </div>
+  {% include 'includes/page_errors.html' %}
   <div class="main-header">
     <h1 class="heading-xlarge">
       <span class="heading-secondary">Step 5</span>
@@ -17,9 +19,9 @@
     </h1>
   </div>
   <div class="main-content">
-    <form action="/financial/costs">
+    <form action="/financial/summary">
 
-      <div class="form-group full">
+      <div class="form-group full" data-required data-field="textfield">
         <label for="managed-authorised" class="form-label">How will ESIF payments be managed and authorised?</label>
          <span class="form-hint">
 <p>Please give the name and contact details for the individual who will:</p>
@@ -33,7 +35,7 @@
         <textarea class="form-control" id="managed-authorised" rows="10"></textarea>
       </div>
 
-      <div class="form-group full">
+      <div class="form-group full" data-required data-field="textfield">
         <label for="cashflow-managed" class="form-label">How will the project's cashflow be managed?</label>
         <span class="form-hint">
 <p>How will you make sure that employees/volunteers:</p>
@@ -49,7 +51,7 @@
         <textarea class="form-control" id="cashflow-managed" rows="10"></textarea>
       </div>
 
-      <div class="form-group full">
+      <div class="form-group full" data-required data-field="textfield">
         <label for="defrayed-expenditure" class="form-label">How will you ensure only eligible and defrayed expenditure is included in claims?</label>
 
 <span class="form-hint">
@@ -62,7 +64,7 @@
         <textarea class="form-control" id="defrayed-expenditure" rows="10"></textarea>
       </div>
 
-      <div class="form-group full">
+      <div class="form-group full" data-required data-field="textfield">
         <label for="checked-verified" class="form-label">How will costs be checked and verified?</label>
 
         <span class="form-hint">
@@ -79,7 +81,7 @@
         <textarea class="form-control" id="checked-verified" rows="10"></textarea>
       </div>
 
-      <div class="form-group full">
+      <div class="form-group full" data-required data-field="textfield">
         <label for="partners-report" class="form-label">How will you and your partners report on ESIF expenditure?</label>
         <span class="form-hint">
 Will you meet regularly to look at how much of the budget has been spent? If yes:

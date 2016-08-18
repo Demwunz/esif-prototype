@@ -2,12 +2,14 @@
 
 <main id="content" role="main">
   {% include "includes/phase_banner_alpha.html" %}
+
   <div class="breadcrumbs">
     <ol>
       <li><a href="/dashboard">About your project</a></li>
       <li>Financial information</li>
     </ol>
   </div>
+  {% include 'includes/page_errors.html' %}
   <div class="main-header">
     <h1 class="heading-xlarge">
       <span class="heading-secondary">Step 4</span>
@@ -17,7 +19,7 @@
   </div>
   <div class="main-content">
     <form action="/financial/costs">
-      <div class="form-group full">
+      <div class="form-group full" data-required data-field="textfield">
         <label for="budget-spent" class="form-label">How will the project budget be spent?</label>
           <span class="form-hint">
             <p>Give a breakdown of all costs for your project, eg:</p>
@@ -28,7 +30,7 @@
           </span>
         <textarea class="form-control" id="budget-spent" cols="30" rows="10"></textarea>
       </div>
-      <div class="form-group full">
+      <div class="form-group full" data-required data-field="textfield">
         <label for="accurate-estimate" class="form-label">How accurate is your cost estimate?</label>
         <span class="form-hint">
           <p>Answer:<p>
@@ -40,7 +42,7 @@
               </span>
         <textarea class="form-control" id="accurate-estimate" cols="30" rows="10"></textarea>
       </div>
-      <div class="form-group">
+      <div class="form-group" data-required data-field="radio">
         <h2 class="form-label-bold">Will the project reclaim irrecoverable VAT?</h2>
 
 <span class="form-hint">
@@ -80,7 +82,7 @@
         </fieldset>
       </div>
 
-      <div class="form-group full">
+      <div class="form-group full" data-required data-field="textfield">
         <label for="match-funding" class="form-label">Who is providing match funding for the project?</label>
 
         <span class="form-hint">
@@ -91,7 +93,7 @@ For example: if the Fundraiser raises £500 for a new sign, the match-funder wil
 
         <textarea class="form-control" id="match-funding" cols="30" rows="10"></textarea>
       </div>
-      <div class="form-group">
+      <div class="form-group" data-required data-field="radio">
         <h2 class="form-label-bold">Is match funding confirmed?</h2>
 
         <span class="form-hint">
@@ -111,7 +113,7 @@ Match funding is confirmed where the sponsor agrees to match any funds raised by
           </label>
         </fieldset>
       </div>
-      <div class="form-group">
+      <div class="form-group" data-required data-field="radio">
         <h2 class="form-label-bold">Do you expect the project to generate income?</h2>
 
         <fieldset class="inline">

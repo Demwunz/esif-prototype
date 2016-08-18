@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    {% include 'includes/page_errors.html' %}
+    
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Step 7</span>
+          Project management and control
+        </h1>
+    </div>
+    <div class="main-content">
+      <form action="/compliance">
+        <div class="form-group full"  data-required  data-field="textfield">
+          <label for="control-systems" class="form-label">What management and control systems will help the project meet ESIF funds requirements?</label>
+          <textarea class="form-control" id="control-systems" rows="10"></textarea>
+        </div>
+        <div class="form-group full"  data-required  data-field="textfield">
+          <label for="evidence-outputs" class="form-label">How will you gather evidence of outputs and results?</label>
+          <textarea class="form-control" id="evidence-outputs" rows="10"></textarea>
+        </div>
+          <!-- submit -->
+          <div class="form-group inline submit-buttons">
+            <button class="button" type="submit">Save and continue</button>
+            <button class="button-hyperlink">Save and quit</button>
+          </div>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

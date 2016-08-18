@@ -8,6 +8,7 @@
       <li>Key dates</li>
     </ol>
   </div>
+  {% include 'includes/page_errors.html' %}
   <div class="main-header">
     <h1 class="heading-xlarge">
       <span class="heading-secondary">Step 4</span>
@@ -17,13 +18,13 @@
   </div>
   <div class="main-content">
     <form action="/strategy/funding">
-      <div class="form-group full">
+      <div class="form-group full" data-required data-field="textfield">
         <label for="strategy-criteria" class="form-label">How does your project meet the call criteria?</label>
         <span class="form-hint">Each ESIF grant has a problem it wants to solve (eg 'reduce unemployment'). You can find details about the problem in the Details section of your Call Specification document. Using the Details, explain how your project will help to solve that problem.
         </span>
         <textarea class="form-control" id="strategy-criteria" cols="30" rows="10"></textarea>
       </div>
-      <div class="form-group full">
+      <div class="form-group full" data-required data-field="textfield">
         <label for="strategy-objectives" class="form-label">How does the project deliver the programme's objectives?</label>
 
 <span class="form-hint">
@@ -37,7 +38,7 @@
 
         <textarea class="form-control" id="strategy-objectives" cols="30" rows="10"></textarea>
       </div>
-      <div class="form-group">
+      <div class="form-group" data-required data-field="radio">
         <h2 class="form-label-bold">Does the project align with the growth priorities of the local ESIF strategy?</h2>
 
     <span class="form-hint">
@@ -49,35 +50,35 @@ You can
           <legend class="visuallyhidden">Does the project align with the growth priorities of the local ESIF strategy?</legend>
 
           <label for="local-yes" class="block-label">
-            <input type="radio" name="sme" value="Yes" id="local-yes">
+            <input type="radio" name="esif-strategy" value="Yes" id="local-yes">
             Yes
           </label>
 
           <label for="local-no" class="block-label">
-            <input type="radio" name="sme" value="No" id="local-no">
+            <input type="radio" name="esif-strategy" value="No" id="local-no">
             No
           </label>
         </fieldset>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" data-required data-field="radio">
         <h2 class="form-label-bold">Will the project have environmental benefits?</h2>
         <fieldset class="inline">
           <legend class="visuallyhidden">Will the project have environmental benefits?</legend>
 
           <label for="benefits-yes" class="block-label">
-            <input type="radio" name="sme" value="Yes" id="benefits-yes">
+            <input type="radio" name="environmental-benefits" value="Yes" id="benefits-yes">
             Yes
           </label>
 
           <label for="benefits-no" class="block-label">
-            <input type="radio" name="sme" value="No" id="benefits-no">
+            <input type="radio" name="environmental-benefits" value="No" id="benefits-no">
             No
           </label>
         </fieldset>
       </div>
 
-      <div class="form-group form-group-year">
+      <div class="form-group form-group-year" data-required data-field="textfield">
         <label for="ensure-equality">
           How do you plan to ensure equality across the project?
           <span class="form-hint">

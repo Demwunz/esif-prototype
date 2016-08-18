@@ -3,13 +3,14 @@
 {% block content %}
 
   <main id="content" role="main">
-    {% include "includes/phase_banner_alpha.html" %}
+    {% include "includes/phase_banner_alpha.html" %}    
     <div class="breadcrumbs">
       <ol>
         <li><a href="/dashboard">About your project</a></li>
         <li>Dates</li>
       </ol>
     </div>
+    {% include "includes/page_errors.html" %}
     <div class="main-header">
         <h1 class="heading-xlarge">
           <span class="heading-secondary">Step 3</span>
@@ -20,9 +21,10 @@
     <div class="main-content">
       <form action="/strategy">
         <!-- project start date -->
-        <fieldset class="form-group">
-          <legend>Project start date</legend>
-          <div class="form-date">
+        <fieldset class="form-group form-date" data-required data-field="date">
+          <h3 class="heading-small">Project start date</h3>
+          <legend class="visually-hidden">Project start date</legend>
+          <div>
 
             <p class="form-hint">If your project start date depends on when/if your application is approved, please use your ideal start date.</p>
 
@@ -45,9 +47,10 @@
         </fieldset>
 
         <!-- financial completion date -->
-        <fieldset class="form-group">
-          <legend>Financial completion date</legend>
-          <div class="form-date">
+        <fieldset class="form-group form-date" data-required data-field="date" data-error="Use correct format">
+          <h3 class="heading-small">Financial completion date</h3>
+          <legend class="visually-hidden">Financial completion date</legend>
+          <div>
 
             <p class="form-hint">If your financial completion date depends on when/if your application is approved, please use an estimated financial completion date based on your ideal start date.</p>
 
@@ -70,9 +73,10 @@
         </fieldset>
 
         <!-- financial completion date -->
-        <fieldset class="form-group">
-          <legend>Project end date</legend>
-          <div class="form-date">
+        <fieldset class="form-group form-date" data-required data-field="date" data-error="Use correct format">
+          <h3 class="heading-small">Project end date</h3>
+          <legend class="visually-hidden">Project end date</legend>
+          <div>
 
             <p class="form-hint">If your project end date depends on when/if your application is approved, please use an estimated project end date based on your ideal start date.</p>
 
@@ -99,14 +103,15 @@
             List any project milestones and dates that they will be met.
           </legend>
           <div class="repeat">
-            <div class="form-group">
+            <div class="form-group" data-required data-field="textfield" data-error="Cannot be empty">
               <label class="form-label" for="milestone-description">Milestone Description</label>
               <input type="text" class="form-control" id="milestone-description">
             </div>
             <!-- financial completion date -->
-            <fieldset class="form-group">
-              <legend class="heading-small">Milestone date</legend>
-              <div class="form-date">
+            <fieldset class="form-group form-date" data-required data-field="date" data-error="Use correct format">
+              <h3 class="heading-small">Milestone date</h3>
+              <legend class="visually-hidden">Milestone date</legend>
+              <div>
 
                 <p class="form-hint">For example, 31 5 2016</p>
 
