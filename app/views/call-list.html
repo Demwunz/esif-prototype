@@ -10,19 +10,34 @@
     </ol>
   </div>
   <div class="main-header">
-    <h1 class="heading-medium">
-      Start a new application
+    <h1 class="heading-large">
+      Apply for funding
     </h1>
-    <p>
-      @nicolette: copy from <a href="https://notableapp.com/posts/120326">https://notableapp.com/posts/1203261</a> needs to go here
-    </p>
   </div>
   <div class="main-content">
+    <h2 class="heading-medium">Call list</h2>
+  </div>
+  <div class="search-form">
+    <fieldset class="search-input">
+      <div class="search-result">
+        <label for="search-main">
+          <h1 class="heading-small">6132 results found <span class="visuallyhidden"> for “the search term”</span></h1>
+        </label>
+      </div>
+      <div class="searchfield">
+        <input type="search" name="q" id="search-call-1">
+        <fieldset class="search-submit">
+          <button type="submit" class="button">Search</button>
+        </fieldset>
+      </div>
+    </fieldset>
+  </div>
+  <div class="table-filter">
 
   </div>
   <div class="table-paginated">
     <table>
-      <caption class="heading-medium">Call list</caption>
+      <caption class="heading-medium visually-hidden">Call list</caption>
       <thead>
         <tr>
           <th scope="col">Call Name</th>
@@ -49,12 +64,17 @@
       </tbody>
     </table>
     <!-- pagination only needs to appear when there are multiple pages -->
-    <!--div class="table-pagination">
-      <ul>
-        <li><a href="#">Previous</a></li>
-        <li><a href="#">Next</a></li>
+    <nav role="menu" aria-label="pagination" class="table-pagination">
+      <p class="pagination-number">Page <span class="strong">1</span> of <span class="strong">10</span></p>
+      <ul class="pagination">
+        <li><a href="#" rel="prev">Previous</a></li>
+        <li><a href="#">1</a></li>
+        <li><span class="current">2</span></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#" rel="next">Next</a></li>
       </ul>
-    </div-->
+    </nav>
     <!-- /pagination -->
   </div>
 </main>

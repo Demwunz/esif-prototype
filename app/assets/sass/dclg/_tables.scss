@@ -12,7 +12,8 @@ caption {
   }
 }
 .table-pagination {
-    @include clearfix;
+  @include clearfix;
+  margin-top:$gutter;
   ul {
     @include clearfix;
     float:right;
@@ -24,11 +25,10 @@ caption {
     float:left;
     margin-right:$gutter-half/2;
     &:last-child {
-      margin:0;
-      a {
-        border-left:1px solid $border-colour;
-        padding-left:$gutter-half/2;
-      }
+      margin-right:0;
     }
   }
+}
+.pagination-number {
+  float:left;margin:0;
 }
