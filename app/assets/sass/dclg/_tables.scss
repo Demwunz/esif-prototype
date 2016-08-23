@@ -32,3 +32,14 @@ caption {
 .pagination-number {
   float:left;margin:0;
 }
+.table-wrapper  {
+  table {
+    margin-bottom:$gutter;
+  }
+  th {
+    vertical-align: top;
+  }
+  th,td {
+    width: 50%;
+  }
+}
