@@ -1,0 +1,82 @@
+{% extends "layout.html" %} {% block page_title %} Apply for European Structural and Investment Funding {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="/dashboard">Home</a></li>
+      <li><a href="/call-list">Call list</a></li>
+      <li><a href="/call-details">Call details</a></li>
+      <li>application-overview</li>
+    </ol>
+  </div>
+  <div class="main-header">
+    <h1 class="heading-large">Introduction</h1>
+  </div>
+  <div>
+    <p>The Full Application must be completed by the <span class="strong">Applicant</span> and submitted to the <span class="strong">Managing Authority</span> by the deadline agreed by the <span class="strong">Managing Authority</span>.</p>
+
+    <p>In order to submit a Full Application you must first have received an invitation to do so from the <span class="strong">Managing Authority</span>.</p>
+
+    <p>Before submitting a Full Application, please ensure that you have read the Full Application Guidance carefully. Any queries should be addressed to the <span class="strong">Managing Authority</span>.</p>
+
+    <p>The <span class="strong">Managing Authority</span> will use the Full Application form to carry out its appraisal of the proposal, with the aim of determining whether the application meets the relevant criteria to be considered for funding. Applicants
+      should note that the <span class="strong">Local Enterprise Partnership Area European Structural and Investment Funds Sub-committee</span> will receive the Managing Authority’s appraisal, incorporating a summary of the Full Application, in order
+      to advise on local strategic fit.</p>
+
+    <p>If this Full Application contains commercially sensitive information which the <span class="strong">Applicant</span> does not want to be shared with the <span class="strong">Local Enterprise Partnership Area European Structural and Investment Funds Sub-committee</span>,
+      the applicant must complete section 12, identifying the commercially sensitive information, requesting that this information is not released and explaining its reasons.</p>
+
+    <p>The <span class="strong">Applicant</span> is required to verify the accuracy of the information provided in the Full Application. Therefore the <span class="strong">Applicant</span> is expected to undertake appropriate investigation to establish the accuracy of its representations.</p> Further information on the application process, including on State Aid law and procurement compliance, can be found on the
+    <a href="http://www.gov.uk" rel="external">www.gov.uk</a> website.</p>
+  </div>
+  <div class="table-wrapper">
+    <table>
+      <caption class="heading-medium">Call details</caption>
+      <tbody>
+        <tr>
+          <th>Call name</th>
+          <td> Clifton CA Claim - Test Call</td>
+        </tr>
+        <tr>
+          <th>Call Reference No.</th>
+          <td>OC50R15P0020</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="form-group" data-required data-field="radio">
+    <h2 class="form-label-bold">Have you submitted a linked/complimentary application against another call?</h2>
+    <fieldset class="inline">
+      <legend class="visuallyhidden">Have you submitted a linked/complimentary application against another call?</legend>
+
+      <label for="activities-yes" class="block-label">
+        <input type="radio" name="linked" value="Yes" id="linked-yes">
+        Yes
+      </label>
+
+      <label for="activities-no" class="block-label">
+        <input type="radio" name="linked" value="No" id="linked-no">
+        No
+      </label>
+    </fieldset>
+  </div>
+  <div class="clone-fields">
+    <div class="form-group">
+      <label class="form-label" for="unique-identifer-0">Please state the unique identifier(s) of the calls you have responded to:</label>
+      <input type="text" class="form-control" id="unique-identifer-0">
+      <p><a href="#">add another</a></p>
+    </div>
+  </div>
+  <div class="buttons">
+    <p>
+      <a class="button" href="/application-dashboard" role="button">Continue to your application dashboard</a>
+    </p>
+    <p>
+      <a href="#">Cancel application and Exit</a>
+    </p>
+  </div>
+
+</main>
+
+{% endblock %}

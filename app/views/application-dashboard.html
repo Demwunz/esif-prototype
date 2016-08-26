@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="breadcrumbs">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/call-list">Call list</a></li>
+        <li><a href="/call-details">Call details</a></li>
+        <li>Application dashboard</li>
+      </ol>
+    </div>
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Call OC04R15P0002 - Clifton CA Claim - Test Call</span>
+          Application overview
+        </h1>
+    </div>
+    <div class="main-content">
+      <div class="application-status-list">
+        <ol>
+          <li>
+            <span class="name">About your organisation</span>
+            <span class="status-pill completed">completed</span>
+            <a href="/applicant">edit</a>
+          </li>
+          <li>
+            <span class="name">Past projects</span>
+            <span class="status-pill completed">completed</span>
+            <a href="#">edit</a>
+          </li>
+          <li>
+            <span class="name">Delivery Partners</span>
+            <span class="status-pill completed">completed</span>
+            <a href="/delivery-partners">edit</a>
+          </li>
+          <li>
+            <span class="name">Project</span>
+            <span class="status-pill review">review</span>
+            <a href="/project">edit</a>
+          </li>
+          <li>
+            <span class="name">About your project</span>
+            <span class="status-pill completed">completed</span>
+            <a href="/project">edit</a>
+          </li>
+          <li>
+            <span class="name">Strategy</span>
+            <span class="status-pill delegated">delegated</span>
+            <a href="/strategy">edit</a>
+          </li>
+          <li>
+            <span class="name">Financial</span>
+            <span class="status-pill in-progress">in-progress</span>
+            <a href="/financial">edit</a>
+          </li>
+          <li>
+            <span class="name">Deliverables</span>
+            <span class="status-pill not-started">not started</span>
+            <a href="#">start</a>
+          </li>
+          <li>
+            <span class="name">Project management and control</span>
+            <span class="status-pill not-started">not started</span>
+            <a href="/project-management">start</a>
+          </li>
+          <li>
+            <span class="name">Compliance</span>
+            <span class="status-pill not-started">not started</span>
+            <a href="/compliance">start</a>
+          </li>
+        </ol>
+      </div>
+      <div class="buttons">
+        <p>
+          <a class="button" href="/application-dashboard" role="button">Save and submit</a>
+          <a class="button button-secondary" href="/application-dashboard" role="button">Save and leave application</a>
+        </p>
+        <p>
+          <a href="#">Cancel application</a>
+        </p>
+      </div>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}
