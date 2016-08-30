@@ -10,19 +10,34 @@
     </ol>
   </div>
   <div class="main-header">
-    <h1 class="heading-medium">
-      Start a new application
+    <h1 class="heading-large">
+      Apply for funding
     </h1>
-    <p>
-      @nicolette: copy from <a href="https://notableapp.com/posts/120326">https://notableapp.com/posts/1203261</a> needs to go here
-    </p>
   </div>
   <div class="main-content">
+    <h2 class="heading-medium">Call list</h2>
+  </div>
+  <div class="search-form">
+    <fieldset class="search-input">
+      <div class="search-result">
+        <label for="search-main">
+          <h1 class="heading-small">6132 results found <span class="visuallyhidden"> for “the search term”</span></h1>
+        </label>
+      </div>
+      <div class="searchfield">
+        <input type="search" name="q" id="search-call-1">
+        <fieldset class="search-submit">
+          <button type="submit" class="button">Search</button>
+        </fieldset>
+      </div>
+    </fieldset>
+  </div>
+  <div class="table-filter">
 
   </div>
   <div class="table-paginated">
     <table>
-      <caption class="heading-medium">Call list</caption>
+      <caption class="heading-medium visually-hidden">Call list</caption>
       <thead>
         <tr>
           <th scope="col">Call Name</th>
@@ -36,25 +51,20 @@
           <td>Clifton CA claim - Test call</td>
           <td class="numeric">OC1R16P00B</td>
           <td class="numeric">14/04/2017</td>
-          <td><a href="#">View details</a></td>
+          <td><a href="/call-details">View details</a></td>
           <td><a href="#">Apply now</a></td>
         </tr>
         <tr>
           <td>Adri call full ERDF Test Call</td>
           <td class="numeric">OC1R16P011C</td>
           <td class="numeric">27/02/2017</td>
-          <td><a href="#">View details</a></td>
+          <td><a href="/call-details">View details</a></td>
           <td><a href="#">Apply now</a></td>
         </tr>
       </tbody>
     </table>
     <!-- pagination only needs to appear when there are multiple pages -->
-    <!--div class="table-pagination">
-      <ul>
-        <li><a href="#">Previous</a></li>
-        <li><a href="#">Next</a></li>
-      </ul>
-    </div-->
+    {% include "includes/table-pagination.html" %}
     <!-- /pagination -->
   </div>
 </main>

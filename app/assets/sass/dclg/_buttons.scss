@@ -1,0 +1,16 @@
+.buttons {
+  margin-top: $gutter;
+  .button {
+    margin-right:$gutter-half;
+    &:last-child {
+      margin-right:0;
+    }
+  }
+}
+.button{
+  &.button-secondary,
+  &.button-secondary:visited {
+    background-color: $grey-2;
+    color:black;
+  }
+}
