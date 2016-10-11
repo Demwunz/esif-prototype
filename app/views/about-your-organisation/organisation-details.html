@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    {% include 'includes/page_errors.html' %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">About your organisation (1 of 2)</span>
+          Organisation details
+        </h1>
+    </div>
+    <div class="main-content">
+      <form action="/about-your-organisation/organisation-addresses" method="get">
+        <fieldset>
+          <legend class="visually-hidden">Organisation details</legend>
+          <!-- organisation name -->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="organisation-name">Organisation name</label>
+            <input type="text" class="form-control" id="organisation-name">
+          </div>
+          <!-- organisation type -->
+          <div class="form-group stack-buttons">
+            <h2 class="form-label-bold">Organisation type</h2>
+
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Organisation type</legend>
+
+              <label for="org-charity" class="block-label">
+                <input type="radio" name="organisation-type" value="Charity" id="org-charity">
+                Charity
+              </label>
+
+              <label for="org-fe" class="block-label">
+                <input type="radio" name="organisation-type" value="Higher/Further Education Institution" id="org-fe">
+                Higher/Further Education Institution
+              </label>
+
+              <label for="org-la" class="block-label">
+                <input type="radio" name="organisation-type" value="Local Authority" id="org-la">
+                Local Authority
+              </label>
+
+              <label for="org-nonprofit" class="block-label">
+                <input type="radio" name="organisation-type" value="Not for Profit Organisation" id="org-nonprofit">
+                Not for Profit Organisation
+              </label>
+
+              <label for="org-private" class="block-label">
+                <input type="radio" name="organisation-type" value="Private Sector" id="org-private">
+                Private Sector
+              </label>
+
+              <label for="org-statutory" class="block-label">
+                <input type="radio" name="organisation-type" value="Statutory/Non Statutory PFO" id="org-statutory">
+                Statutory/Non Statutory PFO
+              </label>
+
+              <label for="org-voluntary" class="block-label">
+                <input type="radio" name="organisation-type" value="Voluntary/Community Organisation" id="org-voluntary">
+                Voluntary/Community Organisation
+              </label>
+
+            </fieldset>
+          </div>
+          <!-- sme? -->
+          <div class="form-group">
+            <h2 class="form-label-bold">Is this a small or medium-sized organisation?</h2>
+        <span class="form-hint">A small or medium-sized organisation is one with 1 to 249 employees.</span>
+
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Is this a small or medium-sized organisation (1 to 249 employees)?</legend>
+
+              <label for="sme-yes" class="block-label">
+                <input type="radio" name="sme" value="Yes" id="sme-yes">
+                Yes
+              </label>
+
+              <label for="sme-no" class="block-label">
+                <input type="radio" name="sme" value="No" id="sme-no">
+                No
+              </label>
+            </fieldset>
+          </div>
+          <!-- company or charity number-->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="company-charity-number">Company or charity registration number</label>
+            <span class="form-hint">If you aren't a company or charity, skip this question</span>
+            <input type="text" class="form-control" id="company-charity-number">
+          </div>
+          <!-- vat number -->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="vat-number">
+              VAT number
+              <span class="form-hint">If you don't have a VAT number, skip this question</span>
+            </label>
+            <input type="text" class="form-control" id="vat-number">
+          </div>
+
+          <div class="form-group inline submit-buttons">
+            <button class="button" type="submit">Next</button>
+            <a href="/application-dashboard" class="button button-secondary">Save and return to dashboard</a>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

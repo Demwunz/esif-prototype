@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    {% include 'includes/page_errors.html' %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">About your organisation (2 of 2)</span>
+          Organisation address and contact details
+        </h1>
+        <a href="/about-your-organisation/organisation-addresses" class="back-link">back</a>
+    </div>
+    <div class="main-content">
+      <form action="/about-your-organisation/organisation-addresses" method="get">
+        <fieldset>
+          <legend>Address</legend>
+          <!-- building number -->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="building-number">Building number or name</label>
+            <input type="text" class="form-control" id="building-number">
+          </div>
+          <!-- street -->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="street">Street</label>
+            <input type="text" class="form-control" id="street">
+          </div>
+          <!-- town/city -->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="town-city">Town/City</label>
+            <input type="text" class="form-control" id="town-city">
+          </div>
+          <!-- postcode -->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="postcode">Postcode</label>
+            <input type="text" class="form-control" id="postcode">
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Contact details</legend>
+          <!-- building number -->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="name">Name</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <!-- street -->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="role">Role in organisation</label>
+            <input type="text" class="form-control" id="role">
+          </div>
+          <!-- town/city -->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="telephone">Telephone</label>
+            <input type="text" class="form-control" id="telephone">
+          </div>
+          <!-- postcode -->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="email-address">Email address</label>
+            <input type="text" class="form-control" id="email-address">
+          </div>
+          <!-- postcode -->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="website">Website</label>
+            <input type="text" class="form-control" id="websire">
+          </div>
+        </fieldset>
+        <div class="form-group inline submit-buttons">
+          <button class="button" type="submit">Next</button>
+          <a href="/application-dashboard" class="button button-secondary">Save and return to dashboard</a>
+        </div>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

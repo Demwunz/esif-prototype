@@ -12,3 +12,18 @@ caption.heading-medium {
   font-weight: 700;
   color:$error-colour;
 }
+.main-header {
+  padding-top:$gutter*2;
+  padding-bottom: $gutter;
+  .heading-large {
+    margin:0;
+  }
+}
+.back-link {
+  &:before {
+    content: "← ";
+  }
+}
+fieldset legend:first-child{
+  margin-bottom:$gutter-half;
+}
