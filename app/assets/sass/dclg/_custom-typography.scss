@@ -13,17 +13,13 @@ caption.heading-medium {
   color:$error-colour;
 }
 .main-header {
-  padding-top:$gutter*2;
+  padding-top:$gutter;
   padding-bottom: $gutter;
   .heading-large {
     margin:0;
   }
 }
-.back-link {
-  &:before {
-    content: "← ";
-  }
-}
+
 fieldset legend:first-child{
   margin-bottom:$gutter-half;
 }
