@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="breadcrumbs">
+      <ol>
+        <li><a href="/application-dashboard">Home</a></li>
+        <li><a href="/call-list">Call list</a></li>
+        <li><a href="/application-dashboard">Application overview</a></li>
+        <li>Strategy</li>
+        <li>Cross-cutting themes</li>
+      </ol>
+    </div>
+    {% include 'includes/page_errors.html' %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Strategy (2 of 4)</span>
+          Cross-cutting themes
+        </h1>
+        <a href="/strategy/strategic-fit" class="link-back">back</a>
+    </div>
+    <div class="main-content">
+      <form action="/strategy/justification" method="get">
+        <fieldset>
+          <legend class="visually-hidden">Cross-cutting themes</legend>
+          <!-- What is the project? -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="criteria" class="form-label">How does the project respect the principle of sustainable development?</label>
+              <span class="form-hint">In particular how does the project maximise positive environmental impacts or mitigate potential negative impacts? (With regard to the "polluter pays" principle where appropriate)</span>
+              <textarea class="form-control" id="criteria" cols="30" rows="5"></textarea>
+            </div>
+            <!-- summary -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="award" class="form-label">How will equality between men and women be taken into account and promoted in the project?</label>
+              <textarea class="form-control" id="award" cols="30" rows="5"></textarea>
+            </div>
+            <!-- specific activities -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="specific-objectives" class="form-label">What steps will be taken to pevent discrimination based on racial or ethnic origin, religion or belief, disability, age or sexual orientation during the preparation and implementation of the project?</label>
+              <textarea class="form-control" id="specific-objectives" cols="30" rows="5"></textarea>
+            </div>
+            <!-- beneficiaries -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="who" class="form-label">How will accessibility for persons with disabilites be taken into account in the project?</label>
+              <textarea class="form-control" id="who" cols="30" rows="5"></textarea>
+            </div>
+            <!--submit buttons -->
+            <div class="form-group inline submit-buttons">
+              <button class="button" type="submit">Save and continue</button>
+              <a href="/application-dashboard" class="button button-secondary">Cancel and return to dashboard</a>
+            </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

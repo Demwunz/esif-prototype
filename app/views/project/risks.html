@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="breadcrumbs">
+      <ol>
+        <li><a href="/application-dashboard">Home</a></li>
+        <li><a href="/call-list">Call list</a></li>
+        <li><a href="/application-dashboard">Application overview</a></li>
+        <li>Strategy</li>
+        <li>Risks</li>
+      </ol>
+    </div>
+    {% include 'includes/page_errors.html' %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Project</span>
+          Risks
+        </h1>
+    </div>
+    <div class="main-content">
+      <form action="/project/issues" method="get">
+        <fieldset>
+          <legend class="visually-hidden">Risks</legend>
+            <!-- risk description -->
+            <div class="form-group" data-required  data-field="textfield">
+              <label class="form-label" for="risk-description">Risk description</label>
+              <input type="text" class="form-control" id="risk-description">
+            </div>
+            <!-- risk description -->
+            <div class="form-group" data-required  data-field="textfield">
+              <label class="form-label" for="owner">Owner</label>
+              <input type="text" class="form-control" id="owner">
+            </div>
+            <!-- risk description -->
+            <div class="form-group" data-required  data-field="textfield">
+              <label class="form-label" for="probability">Probability</label>
+              <input type="text" class="form-control" id="probability">
+            </div>
+            <!-- risk description -->
+            <div class="form-group" data-required  data-field="textfield">
+              <label class="form-label" for="impact">Impact</label>
+              <input type="text" class="form-control" id="impact">
+            </div>
+            <!-- risk description -->
+            <div class="form-group" data-required  data-field="textfield">
+              <label class="form-label" for="mitigation">Mitigation</label>
+              <input type="text" class="form-control" id="mitigation">
+            </div>
+            <!--submit buttons -->
+            <div class="form-group inline submit-buttons">
+              <button class="button" type="submit">Save and continue</button>
+              <a href="/application-dashboard" class="button button-secondary">Cancel and return to dashboard</a>
+            </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

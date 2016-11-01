@@ -1,0 +1,7 @@
+.output {
+  &:before { content:"\00a3"; }
+}
+.notice {
+  float:left;
+  margin:$gutter 0 $gutter-half 0;
+}

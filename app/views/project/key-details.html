@@ -1,0 +1,258 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="breadcrumbs">
+      <ol>
+        <li><a href="/application-dashboard">Home</a></li>
+        <li><a href="/call-list">Call list</a></li>
+        <li><a href="/application-overview">Application overview</a></li>
+        <li>Project</li>
+        <li>Key details</li>
+      </ol>
+    </div>
+    {% include 'includes/page_errors.html' %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Project</span>
+          Key details
+        </h1>
+    </div>
+    <div class="main-content">
+      <form action="/project/capital-projects228420" method="get">
+        <fieldset>
+          <legend class="visually-hidden">Key details</legend>
+
+            <fieldset>
+                <!-- project name -->
+                <div class="form-group" data-required  data-field="textfield">
+                  <label class="form-label" for="project-name">Project name</label>
+                  <input type="text" class="form-control" id="project-name">
+                </div>
+
+                <!-- Amount of funding being applied for -->
+                <h3 class="form-label-bold">Amount of funding being applied for</h3>
+                <div class="grid-row">
+
+                  <div class="column-one-third">
+                    <!-- project name -->
+                    <div class="form-group" data-required  data-field="textfield">
+                      <label class="form-label" for="of-which-erdf"> <span class="visually-hidden">Amount of funding being applied for </span>of which ERDF</label>
+                      <input type="text" class="form-control" id="of-which-erdf">
+                    </div>
+                  </div>
+
+                  <div class="column-one-third">
+                    <!-- project name -->
+                    <div class="form-group" data-required  data-field="textfield">
+                      <label class="form-label" for="of-which-esf"> <span class="visually-hidden">Amount of funding being applied for </span>of which ESF</label>
+                      <input type="text" class="form-control" id="of-which-esf">
+                    </div>
+                  </div>
+
+                  <div class="column-one-third">
+                    <!-- project name -->
+                    <div class="form-group" data-required  data-field="textfield">
+                      <label class="form-label" for="of-which-yei"> <span class="visually-hidden">Amount of funding being applied for </span>of which YEI</label>
+                      <input type="text" class="form-control" id="of-which-yei">
+                    </div>
+                  </div>
+
+                </div>
+                <div id="applied-for-total" class="panel">
+                  <h3 class="form-label-bold">Total ESIF</h3>
+                  <span class="output"></span>
+                </div>
+                <div class="grid-row">
+
+                  <div class="column-one-third">
+                    <!-- project name -->
+                    <div class="form-group" data-required  data-field="textfield">
+                      <label class="form-label" for="total-project-value"> Total project value</label>
+                      <input type="text" class="form-control" id="total-project-value">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- delivery partners table -->
+                <div class="table-wrapper">
+                  <table>
+                    <caption class="heading-medium visually-hidden">Your delivery partners</caption>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Nameof relevant ERDF or ESF Operation Programme Priority Axis</th>
+                        <td>1234</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Name of ESIF Investment Priority</th>
+                        <td>1A - SN1A</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">LEP area(s) covered</th>
+                        <td>15 - Greater Manchester<br>19 - Lancashire</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="form-group">
+                  <h3 class="form-label-bold">Lead LEP Area</h3>
+                  <fieldset class="inline">
+                    <legend class="visually-hidden">Lead LEP Area</legend>
+                    <label for="lep-15" class="block-label">
+                      <input type="radio" name="lep" value="Yes" id="lep-15">
+                      15 - Greater Manchester
+                    </label>
+
+                    <label for="lep-19" class="block-label">
+                      <input type="radio" name="lep" value="No" id="lep-19">
+                      19 - Lancashire
+                    </label>
+                  </fieldset>
+                </div>
+
+                <!-- project name -->
+                <div class="form-group" data-required  data-field="textfield">
+                  <label class="form-label" for="committee-contact">Name of Lead LEP Area ESIF Committee contact</label>
+                  <input type="text" class="form-control" id="committee-contact">
+                </div>
+
+                <!-- project name -->
+                <div class="form-group" data-required  data-field="textfield">
+                  <label class="form-label" for="committee-contact">Name of Managing Authority contact</label>
+                  <input type="text" class="form-control" id="committee-contact">
+                </div>
+
+                <div class="grid-row">
+
+                  <div class="column-one-half">
+                    <!-- Proposed start date -->
+                    <fieldset class="form-group form-date" data-required="" data-field="date" data-error="Use correct format">
+                      <h3 class="heading-small">Proposed start date</h3>
+                      <legend class="visually-hidden">Proposed start date</legend>
+                      <div>
+
+                        <p class="form-hint">For example, 31 5 2016</p>
+
+                        <div class="form-group form-group-day">
+                          <label for="proposed-start-day">Day</label>
+                          <input class="form-control" id="proposed-start-day" name="proposed-start-day" type="number" pattern="[0-9]*" min="0" max="31">
+                        </div>
+
+                        <div class="form-group form-group-month">
+                          <label for="proposed-start-month">Month</label>
+                          <input class="form-control" id="proposed-start-month" name="proposed-start-month" type="number" pattern="[0-9]*" min="0" max="12">
+                        </div>
+
+                        <div class="form-group form-group-year">
+                          <label for="proposed-start-year">Year</label>
+                          <input class="form-control" id="proposed-start-year" name="proposed-start-year" type="number" pattern="[0-9]*" min="0" max="2018">
+                        </div>
+
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="column-one-half">
+                    <!-- Proposed activity end date -->
+                    <fieldset class="form-group form-date" data-required="" data-field="date" data-error="Use correct format">
+                      <h3 class="heading-small">Proposed activity end date</h3>
+                      <legend class="visually-hidden">Proposed activity end date</legend>
+                      <div>
+
+                        <p class="form-hint">For example, 31 5 2016</p>
+
+                        <div class="form-group form-group-day">
+                          <label for="proposed-activity-end-day">Day</label>
+                          <input class="form-control" id="proposed-activity-end-day" name="proposed-activity-end-day" type="number" pattern="[0-9]*" min="0" max="31">
+                        </div>
+
+                        <div class="form-group form-group-month">
+                          <label for="proposed-activity-end-month">Month</label>
+                          <input class="form-control" id="proposed-activity-end-month" name="proposed-activity-end-month" type="number" pattern="[0-9]*" min="0" max="12">
+                        </div>
+
+                        <div class="form-group form-group-year">
+                          <label for="proposed-activity-end-year">Year</label>
+                          <input class="form-control" id="proposed-activity-end-year" name="proposed-activity-end-year" type="number" pattern="[0-9]*" min="0" max="2018">
+                        </div>
+
+                      </div>
+                    </fieldset>
+                  </div>
+
+                </div>
+                <div class="grid-row">
+
+                  <div class="column-one-half">
+                    <!-- Proposed practical completion date of project -->
+                    <fieldset class="form-group form-date" data-required="" data-field="date" data-error="Use correct format">
+                      <h3 class="heading-small">Proposed practical completion date of project</h3>
+                      <legend class="visually-hidden">Proposed practical completion date of project</legend>
+                      <div>
+
+                        <p class="form-hint">For example, 31 5 2016</p>
+
+                        <div class="form-group form-group-day">
+                          <label for="proposed-practical-completion-day">Day</label>
+                          <input class="form-control" id="proposed-practical-completion-day" name="proposed-practical-completion-day" type="number" pattern="[0-9]*" min="0" max="31">
+                        </div>
+
+                        <div class="form-group form-group-month">
+                          <label for="proposed-practical-completion-month">Month</label>
+                          <input class="form-control" id="proposed-practical-completion-month" name="proposed-practical-completion-month" type="number" pattern="[0-9]*" min="0" max="12">
+                        </div>
+
+                        <div class="form-group form-group-year">
+                          <label for="proposed-practical-completion-year">Year</label>
+                          <input class="form-control" id="proposed-practical-completion-year" name="proposed-practical-completion-year" type="number" pattern="[0-9]*" min="0" max="2018">
+                        </div>
+
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="column-one-half">
+                    <!-- Proposed financial completion date -->
+                    <fieldset class="form-group form-date" data-required="" data-field="date" data-error="Use correct format">
+                      <h3 class="heading-small">Proposed financial completion date</h3>
+                      <legend class="visually-hidden">Proposed financial completion date</legend>
+                      <div>
+
+                        <p class="form-hint">For example, 31 5 2016</p>
+
+                        <div class="form-group form-group-day">
+                          <label for="proposed-financial-completion-day">Day</label>
+                          <input class="form-control" id="proposed-financial-completion-day" name="proposed-financial-completion-day" type="number" pattern="[0-9]*" min="0" max="31">
+                        </div>
+
+                        <div class="form-group form-group-month">
+                          <label for="proposed-financial-completion-month">Month</label>
+                          <input class="form-control" id="proposed-financial-completion-month" name="proposed-financial-completion-month" type="number" pattern="[0-9]*" min="0" max="12">
+                        </div>
+
+                        <div class="form-group form-group-year">
+                          <label for="proposed-financial-completion-year">Year</label>
+                          <input class="form-control" id="proposed-financial-completion-year" name="proposed-financial-completion-year" type="number" pattern="[0-9]*" min="0" max="2018">
+                        </div>
+
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </fieldset>
+
+            <!--submit buttons -->
+            <div class="form-group inline submit-buttons">
+                <button class="button" type="submit">Save and continue</button>
+              <a href="/application-dashboard" class="button button-secondary">Cancel and return to dashboard</a>
+            </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

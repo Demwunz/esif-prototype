@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="breadcrumbs">
+      <ol>
+        <li><a href="/application-dashboard">Home</a></li>
+        <li><a href="/call-list">Call list</a></li>
+        <li><a href="/application-dashboard">Application overview</a></li>
+        <li>Strategy</li>
+        <li>Justification</li>
+      </ol>
+    </div>
+    {% include 'includes/page_errors.html' %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Strategy (3 of 4)</span>
+          Justification
+        </h1>
+        <a href="/strategy/cross-cutting-themes" class="link-back">back</a>
+    </div>
+    <div class="main-content">
+      <form action="/strategy/evidence" method="get">
+        <fieldset>
+          <legend class="visually-hidden">Justification</legend>
+          <!-- What is the project? -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="criteria" class="form-label">Why should the project receive ESIF funding?</label>
+              <textarea class="form-control" id="criteria" cols="30" rows="5"></textarea>
+            </div>
+            <!-- summary -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="award" class="form-label">How will the project add value beyond existing or planned activity?</label>
+              <textarea class="form-control" id="award" cols="30" rows="5"></textarea>
+            </div>
+            <!-- specific activities -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="specific-objectives" class="form-label">What would be the impact on the project if it didnt receive ESIF funding?</label>
+              <textarea class="form-control" id="specific-objectives" cols="30" rows="5"></textarea>
+            </div>
+            <!-- beneficiaries -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="who" class="form-label">What would be the impact on the project if the funding level was reduced?</label>
+              <textarea class="form-control" id="who" cols="30" rows="5"></textarea>
+            </div>
+            <!-- beneficiaries -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="who" class="form-label">What would be the impact on the project if ESIF funding was delayed?</label>
+              <textarea class="form-control" id="who" cols="30" rows="5"></textarea>
+            </div>
+            <!--submit buttons -->
+            <div class="form-group inline submit-buttons">
+              <button class="button" type="submit">Save and continue</button>
+              <a href="/application-dashboard" class="button button-secondary">Cancel and return to dashboard</a>
+            </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

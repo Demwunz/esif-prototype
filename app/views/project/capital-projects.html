@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="breadcrumbs">
+      <ol>
+        <li><a href="/application-dashboard">Home</a></li>
+        <li><a href="/call-list">Call list</a></li>
+        <li><a href="/application-overview">Application overview</a></li>
+        <li>Project</li>
+        <li>Capital Projects</li>
+      </ol>
+    </div>
+    {% include 'includes/page_errors.html' %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Project (3 of 4)</span>
+          Capital Projects
+        </h1>
+        <a href="/project/delivery" class="link-back">back</a>
+    </div>
+    <div class="main-content">
+      <form action="/project/capital-projects-documents" method="get">
+        <fieldset>
+          <legend class="visually-hidden">Capital Projects</legend>
+
+            <fieldset>
+              <div class="clone">
+                <!-- approvals needed -->
+                <div class="form-group full" data-required="" data-field="textfield">
+                  <label for="approvals-needed" class="form-label">List all approvals needed for the project to proceed as envisaged</label>
+                  <span class="form-hint">a) which have already been obtained b) which are to be obtained (include timescales)</span>
+                  <textarea class="form-control" id="approvals-needed" cols="30" rows="5"></textarea>
+                </div>
+                <!-- existing charges -->
+                <div class="form-group" data-required  data-field="textfield">
+                  <label class="form-label" for="existing-charges">List all existing charges on the project site(s) at the end of the application</label>
+                  <input type="text" class="form-control" id="existing-charges">
+                </div>
+                <div class="buttons">
+                  <a href="#" class="clone">Add another</a>
+                </div>
+              </div>
+              <!-- /.clone -->
+              <div class="clone">
+                <!-- detailed changes -->
+                <div class="form-group full" data-required="" data-field="textfield">
+                  <label for="detailed-changes" class="form-label">Provide details of any charges the Applicant expects to be removed or added to the site(s) in the 6 months following the submission of this application</label>
+                  <span class="form-hint">List all options to purchase the project site(s) at the date of the Application or which are expected to be put in place within 6 months of the submission of this application</span>
+                  <input type="text" class="form-control" id="detailed-changes">
+                </div>
+                <div class="buttons">
+                  <a href="#" class="clone">Add another</a>
+                </div>
+              </div>
+              <!-- /.clone -->
+
+              <!-- detailed changes -->
+              <div class="form-group full" data-required="" data-field="textfield">
+                <label for="detailed-changes" class="form-label">Provide a clear statement on the sources of match funding</label>
+                <span class="form-hint">This should detail the source, the contribution amount, its current status and any conditionality</span>
+                <textarea class="form-control" id="detailed-changes" cols="30" rows="5"></textarea>
+              </div>
+
+              <!-- detailed changes -->
+              <div class="form-group full" data-required="" data-field="textfield">
+                <label for="detailed-changes" class="form-label">Provide a clear statement on the intended use of the completed asset(s) and the secors you are targeting for the occupiers</label>
+                <span class="form-hint">Provide details of any planned disposals</span>
+                <textarea class="form-control" id="detailed-changes" cols="30" rows="5"></textarea>
+              </div>
+
+              <div class="notice">
+                <i class="icon icon-important">
+                  <span class="visuallyhidden">Warning</span>
+                </i>
+                <strong class="bold-small">
+                  Confirm that you have reviewed DCLG's precedent legal documentation and are willing to enter into these.
+                </strong>
+              </div>
+                <p>If the project is awarded ERDF funding you will be expected to enter into DCLG's precedent legal documentation. This includes a Grant Funding Agreement, a Deed of Covenant, a Collateral Warranty (for your Quantity Surveyor) and a Legal Charge.</p>
+
+              <div class="form-group">
+                  <label for="confirm" class="block-label" data-target="example_confirm">
+                    <input type="checkbox" name="confirm" value="confirm" id="confirm" aria-controls="confirm" aria-expanded="false">
+                    I confirm I have reviewed the legal documentation and agree to enter into the terms specified
+                  </label>
+              </div>
+
+              <div class="sites-list">
+
+                <h3 class="heading-medium">Sites where project undertaken</h3>
+                <div class="panel">
+                  For a capital project, provide the following information about the sites where project activities will be undertaken, and also upload accompanying documents as advised by the Managing Authority
+                </div>
+                <div class="clone">
+                  <!-- site name -->
+                  <div class="form-group" data-required  data-field="textfield">
+                    <label class="form-label" for="site-name-1">Site name</label>
+                    <input type="text" class="form-control" id="site-name-1">
+                  </div>
+                  <!-- site name -->
+                  <div class="form-group" data-required  data-field="textfield">
+                    <label class="form-label" for="registry-number-1">Land Registry Number</label>
+                    <input type="text" class="form-control" id="registry-number-1">
+                  </div>
+                  <!-- approvals needed -->
+                  <div class="form-group full" data-required="" data-field="textfield">
+                    <label for="legal-interest" class="form-label">What is the Applicant's legal interest on the site</label>
+                    <textarea class="form-control" id="legal-interest" cols="30" rows="5"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label class="block-label" for="purchased-for-project">
+                      <input id="purchased-for-project" name="purchased-for-project" type="checkbox" value="purchased-for-project">
+                      Site was purchased for the project
+                    </label>
+                  </div>
+                  <div class="buttons">
+                    <a href="#" class="clone">Add another</a>
+                  </div>
+                </div>
+
+                <!-- table -->
+                <div class="table-wrapper">
+                  <table>
+                    <caption class="heading-small">1. Eccleston Square</caption>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Site name</th>
+                        <td>Eccleston Square</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Land registry number</th>
+                        <td>1A - SN1A</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Legal Interest</th>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- table -->
+                <div class="table-wrapper">
+                  <table>
+                    <caption class="heading-small">2. Battersea Power Station</caption>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Site name</th>
+                        <td>Battersea Power Station</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Land registry number</th>
+                        <td>1A - SN1A</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Legal Interest</th>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </fieldset>
+
+            <!--submit buttons -->
+            <div class="form-group inline submit-buttons">
+                <button class="button" type="submit">Save and continue</button>
+              <a href="/application-dashboard" class="button button-secondary">Cancel and return to dashboard</a>
+            </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

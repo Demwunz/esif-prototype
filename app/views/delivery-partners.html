@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="breadcrumbs">
+      <ol>
+        <li><a href="/application-dashboard">Home</a></li>
+        <li><a href="/call-list">Call list</a></li>
+        <li><a href="/application-overview">Application overview</a></li>
+        <li>Delivery partners</li>
+      </ol>
+    </div>
+    {% include 'includes/page_errors.html' %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Delivery partners</span>
+          Delivery partner details
+        </h1>
+    </div>
+    <div class="main-content">
+      <form action="/about-your-organisation/organisation-addresses" method="get">
+        <fieldset>
+          <legend class="visually-hidden">Previous Projects</legend>
+
+          <!-- previous projects -->
+          <div class="form-group">
+            <h2 class="form-label-bold">Will the project have delivery partners?</h2>
+
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Will thr project have delivery partners?</legend>
+              <span class="form-hint">A delivery partner is another organisation that will be working on this project</span>
+              <label for="delivery-yes" class="block-label">
+                <input type="radio" name="delivery-partner" value="Yes" id="delivery-yes">
+                Yes
+              </label>
+
+              <label for="delivery-no" class="block-label">
+                <input type="radio" name="delivery-partner" value="No" id="delivery-no">
+                No
+              </label>
+
+            </fieldset>
+          </div>
+          <!--/ -->
+
+          <!-- reveal -->
+          <div class="panel">
+            <fieldset>
+              <legend>Add delivery partner details</legend>
+                <!-- organisation name -->
+                <div class="form-group" data-required  data-field="textfield">
+                  <label class="form-label" for="reference">Organisation name</label>
+                  <input type="text" class="form-control" id="reference">
+                </div>
+                <!-- contact -->
+                <div class="form-group" data-required  data-field="textfield">
+                  <label class="form-label" for="fund-name">Contact</label>
+                  <input type="text" class="form-control" id="fund-name">
+                </div>
+
+                <fieldset class="inline">
+                  <h3>Do you have a memorandum of understanding?</h3>
+                  <label for="memorandum-yes" class="block-label">
+                    <input type="radio" name="memorandum" value="Yes" id="memorandum-yes">
+                    Yes
+                  </label>
+
+                  <label for="memorandum-no" class="block-label">
+                    <input type="radio" name="memorandum" value="No" id="memorandum-no">
+                    No
+                  </label>
+                </fieldset>
+
+                <div class="buttons">
+                  <button class="button button-secondary" type="button">Save</button>
+                  <a href="/application-dashboard" href="#" class="clone">Add another delivery partner</a>
+                </div>
+              </fieldset>
+              <div class="inline-table">
+                <table>
+                  <caption class="heading-medium visually-hidden">Your delivery partners</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Delivery partner name</th>
+                      <th scope="col">Contact</th>
+                      <th scope="col">MoU</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Partner name</td>
+                      <td>Joe Bloggs</td>
+                      <td>Yes</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="form-group full" data-required="" data-field="textfield">
+                <label for="identify-partners" class="form-label">How did you identify your delivery partners?</label>
+                <textarea class="form-control" id="identify-partners" cols="30" rows="5"></textarea>
+              </div>
+              <div class="form-group full" data-required="" data-field="textfield">
+                <label for="defrayal" class="form-label">How will you ensure the partners comply with defrayal of expenditure requirements?</label>
+                <textarea class="form-control" id="defrayal" cols="30" rows="5"></textarea>
+              </div>
+            </div>
+
+
+            <!--submit buttons -->
+            <div class="form-group inline submit-buttons">
+                <button class="button" type="submit">Save and continue</button>
+              <a href="/application-dashboard" class="button button-secondary">Save and return to dashboard</a>
+            </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

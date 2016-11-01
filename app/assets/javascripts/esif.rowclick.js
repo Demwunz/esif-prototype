@@ -1,7 +1,8 @@
 var ESIF = ESIF || {};
 
 ESIF.rowclick = function(container) {
-  container.on('click', function() {
+  var li = container.find('li');
+  li.on('click', function() {
     window.location = $(this).find('a')[0].href;
   });
 };

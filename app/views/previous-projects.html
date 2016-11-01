@@ -4,7 +4,6 @@
 
   <main id="content" role="main">
     {% include "includes/phase_banner_alpha.html" %}
-    {% include 'includes/page_errors.html' %}
     <div class="breadcrumbs">
       <ol>
         <li><a href="/dashboard">Home</a></li>
@@ -13,6 +12,7 @@
         <li>Previous projects</li>
       </ol>
     </div>
+    {% include 'includes/page_errors.html' %}
     <div class="main-header">
         <h1 class="heading-large">
           <span class="heading-secondary">About your organisation (1 of 2)</span>
@@ -31,12 +31,12 @@
             <fieldset class="inline">
               <legend class="visuallyhidden">Has this organisation previously worked on a project funded through ESF, ERDF or EAFRD</legend>
 
-              <label for="org-charity" class="block-label">
+              <label for="previous-yes" class="block-label">
                 <input type="radio" name="previous" value="Yes" id="previous-yes">
                 Yes
               </label>
 
-              <label for="org-fe" class="block-label">
+              <label for="previous-no" class="block-label">
                 <input type="radio" name="previous" value="No" id="previous-no">
                 No
               </label>
@@ -46,24 +46,24 @@
           <!--/ -->
 
           <!-- reveal -->
-
-          <p>Please provide the reference number and fund name for all previous and existing EU-funded projects your organisaiton has been involved in. Alternatively provide the project name, your organisation's role. (Include any ESF, ERDF, EARFD, EAGGF or RDPE projects form the 2000-06 and 2007-2013 programmes.)</p>
-          <!-- reference -->
-          <div class="form-group" data-required  data-field="textfield">
-            <label class="form-label" for="reference">Reference</label>
-            <input type="text" class="form-control" id="reference">
+          <div class="panel">
+            <p>Please provide the reference number and fund name for all previous and existing EU-funded projects your organisaiton has been involved in. Alternatively provide the project name, your organisation's role. (Include any ESF, ERDF, EARFD, EAGGF or RDPE projects form the 2000-06 and 2007-2013 programmes.)</p>
+            <!-- reference -->
+            <div class="form-group" data-required  data-field="textfield">
+              <label class="form-label" for="reference">Reference</label>
+              <input type="text" class="form-control" id="reference">
+            </div>
+            <!-- reference -->
+            <div class="form-group" data-required  data-field="textfield">
+              <label class="form-label" for="fund-name">Fund name</label>
+              <input type="text" class="form-control" id="fund-name">
+            </div>
+            <!--submit buttons -->
+            <div class="form-group inline submit-buttons">
+              <button class="button" type="submit">Next</button>
+              <a href="/application-dashboard" class="button button-secondary">Save and return to dashboard</a>
+            </div>
           </div>
-          <!-- reference -->
-          <div class="form-group" data-required  data-field="textfield">
-            <label class="form-label" for="fund-name">Fund name</label>
-            <input type="text" class="form-control" id="fund-name">
-          </div>
-          <!--submit buttons -->
-          <div class="form-group inline submit-buttons">
-            <button class="button" type="submit">Next</button>
-            <a href="/application-dashboard" class="button button-secondary">Save and return to dashboard</a>
-          </div>
-
         </fieldset>
       </form>
     </div>

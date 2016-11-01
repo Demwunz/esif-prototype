@@ -1,10 +1,14 @@
 .buttons {
   margin-top: $gutter;
-  .button {
+  .button,
+  .clone {
     margin-right:$gutter-half;
     &:last-child {
       margin-right:0;
     }
+  }
+  .clone {
+    line-height:2.4em;
   }
 }
 .button{

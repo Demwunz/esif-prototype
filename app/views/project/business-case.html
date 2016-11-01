@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="breadcrumbs">
+      <ol>
+        <li><a href="/application-dashboard">Home</a></li>
+        <li><a href="/call-list">Call list</a></li>
+        <li><a href="/application-overview">Application overview</a></li>
+        <li>Project</li>
+        <li>Business case</li>
+      </ol>
+    </div>
+    {% include 'includes/page_errors.html' %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Project (1 of 4)</span>
+          Business case
+        </h1>
+    </div>
+    <div class="main-content">
+      <form action="/project/delivery" method="get">
+        <fieldset>
+          <legend class="visually-hidden">Capital Projects Documents</legend>
+          <!-- What is the project? -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="what-is-the-project" class="form-label">What is the project?</label>
+              <span class="form-hint">What is it going to do? What will it achieve?</span>
+              <textarea class="form-control" id="what-is-the-project" cols="30" rows="5"></textarea>
+            </div>
+            <!-- summary -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="summary" class="form-label">Summary of the project</label>
+              <textarea class="form-control" id="summary" cols="30" rows="5"></textarea>
+            </div>
+            <!-- specific activities -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="specific-activities" class="form-label">What specific activities will be undertaken as part of the project?</label>
+              <textarea class="form-control" id="specific-activities" cols="30" rows="5"></textarea>
+            </div>
+            <!-- beneficiaries -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="beneficiaries" class="form-label">Who are the project's target beneficiaries?</label>
+              <textarea class="form-control" id="beneficiaries" cols="30" rows="5"></textarea>
+            </div>
+            <!-- project activity -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="project-activity" class="form-label">Where will the project activity take place?</label>
+              <textarea class="form-control" id="project-activity" cols="30" rows="5"></textarea>
+            </div>
+            <fieldset>
+              <legend class="visually-hidden">Outline application endorsement stage</legend>
+                <h3 class="heading-small">Briefly explain how you have addressed each of the conditions made at the outline application endorsement stage</h3>
+                <!-- condition 1 -->
+                <div class="form-group full" data-required="" data-field="textfield">
+                  <label for="condition-1" class="form-label">Condition 1</label>
+                  <textarea class="form-control" id="condition-1" cols="30" rows="5"></textarea>
+                </div>
+                <!-- condition 2 -->
+                <div class="form-group full" data-required="" data-field="textfield">
+                  <label for="condition-2" class="form-label">Condition 2</label>
+                  <textarea class="form-control" id="condition-2" cols="30" rows="5"></textarea>
+                </div>
+            </fieldset>
+            <!--submit buttons -->
+            <div class="form-group inline submit-buttons">
+              <button class="button" type="submit">Save and continue</button>
+              <a href="/application-dashboard" class="button button-secondary">Cancel and return to dashboard</a>
+            </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

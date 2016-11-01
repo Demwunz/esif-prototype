@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="breadcrumbs">
+      <ol>
+        <li><a href="/application-dashboard">Home</a></li>
+        <li><a href="/call-list">Call list</a></li>
+        <li><a href="/application-overview">Application overview</a></li>
+        <li>Project</li>
+        <li>Capital Projects Documents</li>
+      </ol>
+    </div>
+    {% include 'includes/page_errors.html' %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">Project (4 of 4)</span>
+          Capital Projects Documents
+        </h1>
+        <a href="/project/capital-projects" class="link-back">back</a>
+    </div>
+    <div class="main-content">
+      <form action="/project/capital-projects-documents" method="get">
+        <fieldset>
+          <legend class="visually-hidden">Capital Projects Documents</legend>
+            <div class="panel">
+              <p>The following accompanying documents should be provided for all Capital Projects applying for ERDF.</p>
+            </div>
+            <h3 class="heading-medium">Accompanying documents for Capital Projects applying for ERDF</h3>
+            <p>Evidence that the applicant has/will have control of the site to deliver the project.</p>
+            <h3 class="heading-small">Specification of the document or acceptable alternative</h3>
+            <p>Freehold or leasehold title for the project or signed Heads of Terms between applicant and vendor for land/building acquisition.</p>
+            <!-- comment -->
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="explanatory-description" class="form-label">Comment including name of document and explanatory description where the document does not fully meet the required specifications.</label>
+              <span class="form-hint">Advise whether a document is not applicable for the project</span>
+              <textarea class="form-control" id="explanatory-description" cols="30" rows="5"></textarea>
+            </div>
+            <h3 class="heading-medium">Accompanying documents for Capital Projects applying for ERDF</h3>
+            <p>State Aid Report</p>
+            <h3 class="heading-small">Specification of the document or acceptable alternative</h3>
+            <p>A State Aid Report, addressed to the Applicant and produced by a suitably qaulified professional organisation (e.g a law firm or accountant) which</p>
+            <ul class="list list-bullet">
+              <li>lists all the Project costs used to determine the State Aid intervention rate</li>
+              <li>gives an opinion as to whether each cost is eligible</li>
+              <li>analyses whether the proposed award to the Applicant meets all the requirements of the specified State Aid scheme</li>
+              <li>sets out all the information required for Article 6 of regulation 651/2014 (if applicable)</li>
+            </ul>
+            <p>If the Applicant intends to use the value of any land or buildings in the match funding calculation, the report must provide an express explanation as to how this is State Aid compliant, if necessary using the information set out in the independent valuation report.</p>
+            <div class="form-group full" data-required="" data-field="textfield">
+              <label for="explanatory-description" class="form-label">Comment including name of document and explanatory description where the document does not fully meet the required specifications.</label>
+              <span class="form-hint">Advise whether a document is not applicable for the project</span>
+              <textarea class="form-control" id="explanatory-description" cols="30" rows="5"></textarea>
+            </div>
+
+            <!--submit buttons -->
+            <div class="form-group inline submit-buttons">
+                <button class="button" type="submit">Save and continue</button>
+              <a href="/application-dashboard" class="button button-secondary">Cancel and return to dashboard</a>
+            </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}
