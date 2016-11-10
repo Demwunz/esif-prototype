@@ -1,0 +1,43 @@
+{% extends "layout.html" %} {% block page_title %} Apply for European Structural and Investment Funding {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="/dashboard">About your project</a></li>
+      <li>Financial information</li>
+    </ol>
+  </div>
+  <!-- modal replacement -->
+  <!--
+    you would add a "hidden" class to this element so its not visible on page load.
+    Remove the class and then use javascript to focus on this element in order for the screen reader to read out the instruction to the user
+   -->
+  <div id="modalReplacement" aria-hidden="false" role="dialog" class="error-summary" aria-labelledby="dialogheader">
+      <h1 id="dialogheader" tabindex="0" class="heading-large">Modal replacement</h1>
+      <p>Note that this form does nothing, it is just to show aria dialog at work. <br>
+      There are no required elements.</p>
+      <input type="button" value="Cancel" name="cancel" id="cancel" class="button button-secondary">
+      <input type="button" value="OK" name="ok" id="ok" aria-flowto="dialogheader" class="button">
+  </div>
+  <!-- modal replacement -->
+  {% include 'includes/page_errors.html' %}
+  <div class="main-header">
+    <h1 class="heading-xlarge">
+      <span class="heading-secondary">Step 4</span>
+      <span class="visually-hidden">:</span>
+      Financial information
+    </h1>
+  </div>
+  <div class="main-content">
+    <h1></h1>
+  </div>
+  </div>
+  <div class="secondary-content">
+    {% include "includes/application_info.html" %}
+    {% include "includes/secondary_nav.html" %}
+  </div>
+</main>
+
+{% endblock %}
