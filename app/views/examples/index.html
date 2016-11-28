@@ -1,0 +1,210 @@
+{% extends "layout.html" %}
+{% block page_title %} Apply for European Structural and Investment Funding {% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    {% include "includes/phase_banner_alpha.html" %}
+    <div class="breadcrumbs">
+      <ol>
+        <li><a href="/dashboard">Home</a></li>
+        <li><a href="/call-list">Parent Page</a></li>
+        <li><a href="/application-overview">Section</a></li>
+        <li>Current page</li>
+      </ol>
+    </div>
+    <!-- modal replacement -->
+    <!--
+      you would add a "hidden" class to this element so its not visible on page load.
+      Remove the class and then use javascript to focus on this element in order for the screen reader to read out the instruction to the user
+     -->
+    <div id="modalReplacement" aria-hidden="false" role="dialog" class="error-summary" aria-labelledby="dialogheader">
+        <h1 id="dialogheader" tabindex="0" class="heading-large">Modal replacement</h1>
+        <p>Note that this form does nothing, it is just to show aria dialog at work. <br>
+        There are no required elements.</p>
+        <input type="button" value="Cancel" name="cancel" id="cancel" class="button button-secondary">
+        <input type="button" value="OK" name="ok" id="ok" aria-flowto="dialogheader" class="button">
+    </div>
+    <!-- modal replacement -->
+    {% include 'includes/page_errors.html' %}
+    <div class="main-header">
+        <h1 class="heading-large">
+          <span class="heading-secondary">This is the name of the section (1 of 2)</span>
+          This is the page name
+        </h1>
+        <a href="#" class="link-back">Back</a>
+    </div>
+    <div class="main-content">
+      <form action="/about-your-organisation/organisation-addresses" method="get">
+        <fieldset>
+          <legend class="visually-hidden">Organisation details</legend>
+
+          <!-- single text field -->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="organisation-name">Organisation name</label>
+            <input type="text" class="form-control" id="organisation-name">
+          </div>
+
+          <!-- extended help text -->
+          <div class="form-group" data-required  data-field="textfield">
+            <label class="form-label" for="organisation-name">Extended help text</label>
+            <span class="form-hint">This is hint text.</span>
+            <input type="text" class="form-control" id="organisation-name">
+            <details>
+              <summary><span class="summary">Here is some extended help text</span></summary>
+              <div class="panel panel-border-narrow">
+                <p>
+                  If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.
+                </p>
+                <p>
+                  We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post.
+                </p>
+              </div>
+            </details>
+          </div>
+          
+          <!-- £ signs -->
+                <h3 class="form-label-bold">Example of £ signs</h3>
+                <div class="grid-row">
+
+                  <div class="column-one-third">
+                    <div class="form-group prefixed-field" data-required  data-field="textfield">
+                      <label class="form-label" for="of-which-erdf"> <span class="visually-hidden">Amount of funding being applied for </span>of which ERDF</label>
+                      <div class="currency_field">
+                        <span class="currency_pound">£</span>
+                        <input class="string optional form-control" type="text" name="of-which-erdf" id="of-which-erdf">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="column-one-third">
+                    <div class="form-group prefixed-field" data-required  data-field="textfield">
+                      <label class="form-label" for="of-which-esf"> <span class="visually-hidden">Amount of funding being applied for </span>of which ESF</label>
+                      <div class="currency_field">
+                        <span class="currency_pound">£</span>
+                        <input type="text" class="form-control" id="of-which-esf">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="column-one-third">
+                    <div class="form-group prefixed-field" data-required  data-field="textfield">
+                      <label class="form-label" for="of-which-yei"> <span class="visually-hidden">Amount of funding being applied for </span>of which YEI</label>
+                      <div class="currency_field">
+                        <span class="currency_pound">£</span>
+                        <input type="text" class="form-control" id="of-which-yei">
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+           <!-- 2 buttons -->
+          <div class="form-group">
+            <h2 class="form-label-bold">Two radio buttons</h2>
+            <span class="form-hint">This is hint text.</span>
+
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Is this a small or medium-sized organisation (1 to 249 employees)?</legend>
+
+              <label for="sme-yes" class="block-label">
+                <input type="radio" name="sme" value="Yes" id="sme-yes">
+                Yes
+              </label>
+
+              <label for="sme-no" class="block-label">
+                <input type="radio" name="sme" value="No" id="sme-no">
+                No
+              </label>
+            </fieldset>
+          </div>
+
+          <!-- more than 2 radio buttons -->
+          <div class="form-group stack-buttons">
+            <h2 class="form-label-bold">More than two radio buttons</h2>
+
+            <fieldset class="inline">
+              <legend class="visuallyhidden">Organisation type</legend>
+
+              <label for="org-charity" class="block-label">
+                <input type="radio" name="organisation-type" value="Charity" id="org-charity">
+                Charity
+              </label>
+
+              <label for="org-fe" class="block-label">
+                <input type="radio" name="organisation-type" value="Higher/Further Education Institution" id="org-fe">
+                Higher/Further Education Institution
+              </label>
+
+              <label for="org-la" class="block-label">
+                <input type="radio" name="organisation-type" value="Local Authority" id="org-la">
+                Local Authority
+              </label>
+
+              <label for="org-nonprofit" class="block-label">
+                <input type="radio" name="organisation-type" value="Not for Profit Organisation" id="org-nonprofit">
+                Not for Profit Organisation
+              </label>
+
+              <label for="org-private" class="block-label">
+                <input type="radio" name="organisation-type" value="Private Sector" id="org-private">
+                Private Sector
+              </label>
+
+              <label for="org-statutory" class="block-label">
+                <input type="radio" name="organisation-type" value="Statutory/Non Statutory PFO" id="org-statutory">
+                Statutory/Non Statutory PFO
+              </label>
+
+              <label for="org-voluntary" class="block-label">
+                <input type="radio" name="organisation-type" value="Voluntary/Community Organisation" id="org-voluntary">
+                Voluntary/Community Organisation
+              </label>
+
+            </fieldset>
+          </div>
+
+          <!--table -->
+          <div class="table">
+            <table>
+              <caption class="heading-medium">Table example for #2509</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th class="numeric" scope="col">Paper form</th>
+                  <th class="numeric" scope="col">Digital</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">25 November to 1 December 2013</th>
+                  <td class="numeric">2,763</td>
+                  <td class="numeric">1,792</td>
+                </tr>
+                <tr>
+                  <th scope="row">2 to 8 December 2013</th>
+                  <td class="numeric">2,850</td>
+                  <td class="numeric">1,740</td>
+                </tr>
+                <tr>
+                  <th scope="row">9 to 15 December 2013</th>
+                  <td class="numeric">2,388</td>
+                  <td class="numeric">1,683</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <div class="form-group inline submit-buttons">
+            <button class="button" type="submit">Save and continue</button>
+            <a href="/application-dashboard" class="button button-secondary">Save and return to dashboard</a>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="secondary-content">
+      {% include "includes/application_info.html" %}
+      {% include "includes/secondary_nav.html" %}
+    </div>
+  </main>
+
+{% endblock %}

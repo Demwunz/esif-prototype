@@ -9,3 +9,28 @@
 #dialogheader {
   margin-top:0;
 }
+
+.prefixed-field {
+  .currency_pound {
+  	width: $gutter-half;
+  	float: left;
+  	padding-left: $gutter-half;
+  	padding-right: $gutter-half;
+  	font-weight: 400;
+  	text-transform: none;
+  	padding-top: 6px;
+  	padding-bottom: 2px;
+  	display: inline-block;
+  	text-align: center;
+  	background: $panel-colour;
+    border: 2px solid $grey-1;
+    border-right: none;
+  }
+  input {
+    border-left:none;
+  }
+}
+
+details {
+  margin-top:$gutter-half;
+}
