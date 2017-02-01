@@ -3,7 +3,6 @@
 // Note: prototype config can be overridden using environment variables (eg on heroku)
 
 module.exports = {
-
   // Service name used in header. Eg: 'Renew your passport'
   serviceName: "European Structural and Investment Fund",
 
@@ -13,10 +12,13 @@ module.exports = {
   // Enable or disable password protection on production
   useAuth: 'true',
 
+  // Enable or disable built-in docs and examples.
+  useDocumentation: 'true',
+
   // Force HTTP to redirect to HTTPs on production
   useHttps: 'true',
 
   // Cookie warning - update link to service's cookie page.
-  cookieText: 'GOV.UK uses cookies to make the site simpler. <a href="#" title="Find out more about cookies">Find out more about cookies</a>'
+  cookieText: 'GOV.UK uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>'
 
 };
