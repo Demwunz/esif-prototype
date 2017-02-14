@@ -1,0 +1,69 @@
+{% extends "layout.html" %} {% block page_title %} Apply for European Structural and Investment Funding {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="/dashboard">About your project</a></li>
+      <li><a href="/dashboard">Financial information</a></li>
+      <li>Cost funding and allocations</li>
+    </ol>
+  </div>
+  {% include 'includes/page_errors.html' %}
+  <div class="main-header">
+    <h1 class="heading-xlarge">
+      <span class="heading-secondary">Financial (3 of 5)</span>
+      <span class="visually-hidden">:</span>
+      Cost and Funding Allocations
+    </h1>
+  </div>
+  <div class="main-content">
+    <form action="/financial/summary">
+      <p>Cost and funding allocations are used to indicate the split costs and funding between Priority Axes, Investment Priorities, LEP areas and Categroies of region. It is used to determine the different grant rates that may apply to different categories of region and/or different investment priorities. The split of match funding sources between public sources (e.g local authority funding) and private sources (e.g private sector reserves, bank loan, SME contributions) is to meet our reporting obligations to the European Commission where have to report not just on the {Fund eg ERDF} funding but also on the public and private funding related to the expenditure.</p>
+      <div class="form-group">
+        <fieldset>
+          <legend>Priority Axis</legend>
+
+          <label for="org-charity" class="block-label">
+            <input type="radio" name="priority-axis" value="PA1" id="org-charity">
+            PA1 - Promoting research and innovation
+          </label>
+
+          <label for="org-fe" class="block-label">
+            <input type="radio" name="priority-axis" value="PA2" id="org-fe">
+            PA2 - Enhancing access to, and use and quality of, ICT
+          </label>
+
+        </fieldset>
+      </div>
+      <div class="form-group">
+        <fieldset>
+          <legend>Investment Priority</legend>
+
+          <label for="org-charity" class="block-label">
+            <input type="radio" name="organisation-type" value="Charity" id="org-charity">
+            PA1 - Promoting research and innovation
+          </label>
+
+          <label for="org-fe" class="block-label">
+            <input type="radio" name="organisation-type" value="Higher/Further Education Institution" id="org-fe">
+            PA2 - Enhancing access to, and use and quality of, ICT
+          </label>
+
+        </fieldset>
+      </div>
+      <!-- submit -->
+      <div class="form-group inline submit-buttons">
+        <button class="button" type="submit">Save and continue</button>
+        <button class="button-hyperlink">Save and quit</button>
+      </div>
+    </form>
+  </div>
+  <div class="secondary-content">
+    {% include "includes/application_info.html" %}
+    {% include "includes/secondary_nav.html" %}
+  </div>
+</main>
+
+{% endblock %}
